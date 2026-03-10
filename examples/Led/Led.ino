@@ -1,11 +1,10 @@
 // This code tests the functionality of the Led class.
-#include <Arduino.h>
-#include "Led.h"
+#include <Led.h>
+#include <pins.h>
 
-Led led(14);
+Led led(RED_LED_PIN);
 
 void setup() {
-    Serial.begin(9600);
     led.begin();
 }
 
