@@ -2,6 +2,14 @@
  * @file tkjhat/pins.h
  */
 
+/** @name I²C Bus (default)
+ *  I2C bus pins.
+ *  @{
+ */
+#define DEFAULT_I2C_SDA_PIN   12  /**< I²C data pin (SDA) */
+#define DEFAULT_I2C_SCL_PIN   13  /**< I²C clock pin (SCL) */
+/** @} */
+
 /** @name Buttons / Switches
  *  @{
  */
