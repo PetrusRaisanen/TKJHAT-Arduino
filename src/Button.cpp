@@ -12,7 +12,7 @@ Button::Button(uint8_t pin) {
  * @brief Initialize the button
  * 
  * Configures the pin as INPUT_PULLUP, so the button
- * reads LOW when pressed and HIGH when released.
+ * reads HIGH when pressed and LOW when released.
  */
 void Button::begin() {
     pinMode(pin, INPUT_PULLUP);
@@ -20,9 +20,9 @@ void Button::begin() {
 
 /**
  * @brief Check if the button is pressed
- * @return true if pressed (logic LOW)
- * @return false if not pressed (logic HIGH)
+ * @return true if pressed (logic HIGH)
+ * @return false if not pressed (logic LOW)
  */
 bool Button::isPressed() {
-    return digitalRead(pin) == LOW;
+    return digitalRead(pin) == HIGH;
 }
