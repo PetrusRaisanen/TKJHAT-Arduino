@@ -1,20 +1,18 @@
 #include "Led.h"
-
-Led::Led(uint8_t pin) {
-    this->pin = pin;
-}
+#include "pins.h"
+#include <Arduino.h>
 
 void Led::begin() {
-    pinMode(pin, OUTPUT);
+    pinMode(RED_LED_PIN, OUTPUT);
 }
 
 void Led::toggle() {
-    bool curr = digitalRead(pin);
-    digitalWrite(pin, !curr);
+    bool curr = digitalRead(RED_LED_PIN);
+    digitalWrite(RED_LED_PIN, !curr);
 }
 
 void Led::set(bool status) {
-    digitalWrite(pin, status ? HIGH : LOW);
+    digitalWrite(RED_LED_PIN, status ? HIGH : LOW);
 }
 
 void Led::blink(int n) {
@@ -24,5 +22,5 @@ void Led::blink(int n) {
         toggle();
         delay(120);
     }
-    digitalWrite(pin, LOW);
+    digitalWrite(RED_LED_PIN, LOW);
 }
