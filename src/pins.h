@@ -23,3 +23,9 @@
  */
 #define RED_LED_PIN           14  /**< Onboard red LED pin (GPIO 14) */
 /** @} */
+
+/** @name Buzzer
+ *  @{
+ */
+#define BUZZER_PIN            17  /**< Buzzer control pin (GPIO 17) */
+/** @} */

@@ -15,13 +15,13 @@ void TKJHAT::begin() {
     Wire.setSCL(DEFAULT_I2C_SCL_PIN);
     Wire.begin();
 
-    // Initialize already ported peripherals
+    // Initialize peripherals
     button1.begin();
     button2.begin();
     led.begin();
     buzzer.begin();
 
-    // Safe default states
+    // Set initial states
     led.set(false);
     buzzer.off();
 }
