@@ -23,5 +23,4 @@ void TKJHAT::begin() {
 
     // Set initial states
     led.set(false);
-    buzzer.off();
 }

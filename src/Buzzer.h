@@ -13,6 +13,8 @@ class Buzzer {
     void begin();
 
     void playTone(uint32_t frequency, uint32_t duration);
-    
+
     void turnOff();
 };
+
+#endif
