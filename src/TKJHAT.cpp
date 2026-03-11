@@ -7,6 +7,7 @@ TKJHAT::TKJHAT()
       button2(SW2_PIN),
       led(RED_LED_PIN),
       buzzer(BUZZER_PIN),
+      display(),
       rgbLed(RGB_LED_R, RGB_LED_G, RGB_LED_B) {
 }
 
@@ -20,6 +21,7 @@ void TKJHAT::begin() {
     led.begin();
     buzzer.begin();
     rgbLed.begin();
+    display.begin();
 
     led.set(false);
 }

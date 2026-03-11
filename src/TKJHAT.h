@@ -6,6 +6,7 @@
 #include "Button.h"
 #include "Led.h"
 #include "Buzzer.h"
+#include "Display.h"
 #include "RGBLed.h"
 
 /**
@@ -18,6 +19,7 @@ public:
     Button button2;
     Led led;
     Buzzer buzzer;
+    Display display;
     RGBLed rgbLed;
 
     /**
