@@ -31,10 +31,19 @@
 /** @} */
 
 
-/** @name RGB LED
+/** @name RGB LED (common-anode)
  *  @{
  */
 #define RGB_LED_R             18  /**< RGB LED red channel (GPIO 18) */
 #define RGB_LED_G             19  /**< RGB LED green channel (GPIO 19) */
 #define RGB_LED_B             20  /**< RGB LED blue channel (GPIO 20) */
 /** @} */
+
+
+/** @name PDM Microphone
+ *  @{
+ */
+#define PDM_DATA              16  /**< Microphone data input (GPIO 16) */
+#define PDM_CLK               15  /**< Microphone clock output (GPIO 15) */
+/** @} */
+
