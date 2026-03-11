@@ -29,3 +29,12 @@
  */
 #define BUZZER_PIN            17  /**< Buzzer control pin (GPIO 17) */
 /** @} */
+
+
+/** @name RGB LED
+ *  @{
+ */
+#define RGB_LED_R             18  /**< RGB LED red channel (GPIO 18) */
+#define RGB_LED_G             19  /**< RGB LED green channel (GPIO 19) */
+#define RGB_LED_B             20  /**< RGB LED blue channel (GPIO 20) */
+/** @} */
