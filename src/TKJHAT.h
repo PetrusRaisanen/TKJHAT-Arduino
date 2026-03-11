@@ -6,6 +6,7 @@
 #include "Button.h"
 #include "Led.h"
 #include "Buzzer.h"
+#include "RGBLed.h"
 
 /**
  * @class TKJHAT
@@ -17,6 +18,7 @@ public:
     Button button2;
     Led led;
     Buzzer buzzer;
+    RGBLed rgbLed;
 
     /**
      * @brief Construct a new TKJHAT object.
