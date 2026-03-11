@@ -9,7 +9,7 @@
 #ifndef TKJHAT_BUTTON_H
 #define TKJHAT_BUTTON_H
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 /**
  * @class Button

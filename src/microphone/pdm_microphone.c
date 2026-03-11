@@ -12,11 +12,11 @@
 #include "hardware/dma.h"
 #include "hardware/irq.h"
 
-#include "OpenPDM2PCM/OpenPDMFilter.h"
+#include "microphone/OpenPDM2PCM/OpenPDMFilter.h"
 
-#include "pdm_microphone.pio.h"
+#include "microphone/pdm_microphone.pio.h"
 
-#include "pico/pdm_microphone.h"
+#include "microphone/pico/pdm_microphone.h"
 
 #define PDM_DECIMATION       64
 #define PDM_RAW_BUFFER_COUNT 2
@@ -103,6 +103,7 @@ int pdm_microphone_init(const struct pdm_microphone_config* config) {
     pdm_mic.filter.Gain = 16;
 
     pdm_mic.filter_volume = pdm_mic.filter.MaxVolume;
+    return 0;
 }
 
 void pdm_microphone_deinit() {
@@ -155,6 +156,7 @@ int pdm_microphone_start() {
         pdm_mic.config.pio_sm,
         true
     );
+    return 0;
 }
 
 void pdm_microphone_stop() {

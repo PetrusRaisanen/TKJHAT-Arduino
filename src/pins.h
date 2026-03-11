@@ -47,3 +47,8 @@
 #define PDM_CLK               15  /**< Microphone clock output (GPIO 15) */
 /** @} */
 
+/** @name Display
+ *  SSD1306 display address 
+ *  @{ */
+#define SSD1306_I2C_ADDRESS                     0x3C   /**< I2C address of the SSD1306 OLED display. */
+/** @} */

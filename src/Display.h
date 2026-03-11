@@ -3,9 +3,8 @@
 
 #include <Arduino.h>
 
-
 extern "C" {    // Including C headers in a C++ file requires extern "C"
-#include "ssd1306.h"
+#include "display/ssd1306.h"
 }
 
 class Display {

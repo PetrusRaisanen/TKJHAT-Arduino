@@ -4,7 +4,7 @@
 #include <Arduino.h>
 
 extern "C" {
-#include "pdm_microphone.h"
+#include "microphone/pico/pdm_microphone.h"
 }
 
 class Microphone {

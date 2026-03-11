@@ -1,5 +1,5 @@
 #include "Display.h"
-#include "font.h"
+#include "display/font.h"
 #include "pins.h"
 
 Display::Display() {

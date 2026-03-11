@@ -1,5 +1,4 @@
 #include "Microphone.h"
-#include "pdm_microphone.h"
 
 // Constructor
 Microphone::Microphone(uint8_t dataPin, uint8_t clkPin) {
