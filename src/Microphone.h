@@ -2,7 +2,10 @@
 #define TKJHAT_MICROPHONE_H
 
 #include <Arduino.h>
+
+extern "C" {
 #include "pdm_microphone.h"
+}
 
 class Microphone {
 private:
@@ -11,13 +14,13 @@ private:
 
 public:
     Microphone(uint8_t dataPin, uint8_t clkPin);
+
     int begin();
     int start();
     void stop();
 
     void setCallback(pdm_samples_ready_handler_t handler);
     int getSamples(int16_t* buffer, size_t samples);
-
 };
 
 #endif
