@@ -8,6 +8,7 @@
 #include "Buzzer.h"
 #include "Display.h"
 #include "RGBLed.h"
+#include "ICM42670.h"
 
 /**
  * @class TKJHAT
@@ -21,6 +22,7 @@ public:
     Buzzer buzzer;
     Display display;
     RGBLed rgbLed;
+    ICM42670 icm42670;    
 
     /**
      * @brief Construct a new TKJHAT object.
