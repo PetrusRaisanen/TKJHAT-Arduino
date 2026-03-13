@@ -10,7 +10,8 @@ TKJHAT::TKJHAT()
       buzzer(BUZZER_PIN),
       display(),
       rgbLed(RGB_LED_R, RGB_LED_G, RGB_LED_B),
-      icm42670()
+      icm42670(),
+      lightSensor(DEFAULT_I2C_SDA_PIN, DEFAULT_I2C_SCL_PIN)
       {
 }
 
@@ -27,6 +28,7 @@ void TKJHAT::begin() {
     rgbLed.begin();
     display.begin();
     icm42670.begin();
+    lightSensor.begin();
 
     // Initial states
     led.set(false);

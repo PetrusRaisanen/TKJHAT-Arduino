@@ -71,3 +71,11 @@
 #define ICM42670_REG_SIGNAL_PATH_RESET          0x02   /**< Signal path reset register. */
 #define ICM42670_RESET_CONFIG_BITS              0x10   /**< Value used for soft reset sequence. */
 /** @} */
+
+/** @name VEML6030
+ *  Light sensor address, and registers
+ *  @{ */
+#define VEML6030_I2C_ADDR                       0x10   /**< I2C address of the VEML6030 sensor. */
+#define VEML6030_CONFIG_REG                     0x00   /**< Configuration register. */
+#define VEML6030_ALS_REG                        0x04   /**< Ambient Light Sensing (ALS) data register. */
+/** @} */

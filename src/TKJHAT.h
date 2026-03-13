@@ -9,6 +9,7 @@
 #include "Display.h"
 #include "RGBLed.h"
 #include "ICM42670.h"
+#include "Lightsensor.h"
 
 /**
  * @class TKJHAT
@@ -23,6 +24,7 @@ public:
     Display display;
     RGBLed rgbLed;
     ICM42670 icm42670;    
+    LightSensor lightSensor;
 
     /**
      * @brief Construct a new TKJHAT object.
