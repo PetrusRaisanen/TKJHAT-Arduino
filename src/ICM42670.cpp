@@ -12,23 +12,23 @@ ICM42670::ICM42670(TwoWire& w)
 
 // Write a single byte to a register
 bool ICM42670::writeByte(uint8_t reg, uint8_t value) {
-    wire->beginTransmission(address);
-    wire->write(reg);
-    wire->write(value);
-    return wire->endTransmission() == 0;
+    wire->beginTransmission(address); // start communication with the sensor at the address
+    wire->write(reg); // write the register address
+    wire->write(value); // write the value to the register
+    return wire->endTransmission() == 0; // success if 0
 }
 
 // Read a single byte from a register
 bool ICM42670::readByte(uint8_t reg, uint8_t& value) {
     wire->beginTransmission(address);
     wire->write(reg);
-    if (wire->endTransmission(false) != 0) {
+    if (wire->endTransmission(false) != 0) { // Stop = false, we want to keep the connection active for reading
         return false;
     }
-    if (wire->requestFrom(address, (uint8_t)1) != 1) {
+    if (wire->requestFrom(address, (uint8_t)1) != 1) { // should request 1 byte
         return false;
     }
-    value = wire->read();
+    value = wire->read(); // read the byte
     return true;
 }
 
@@ -76,7 +76,7 @@ bool ICM42670::reset() {
 
 // Read WHO_AM_I register
 bool ICM42670::readWhoAmI(uint8_t& who) {
-    return readByte(ICM42670_REG_WHO_AM_I, who);
+    return readByte(ICM42670_REG_WHO_AM_I, who); // reads the WHO_AM_I register into given parameter
 }
 
 // Get the detected I2C address
