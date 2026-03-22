@@ -50,22 +50,41 @@ bool ICM42670::readBytes(uint8_t reg, uint8_t* buffer, size_t len) {
 
 // Address detection
 bool ICM42670::detectAddress() {
-    uint8_t who = 0;
-    if (!readByte(ICM42670_REG_WHO_AM_I, who)) { // try to read the WHO_AM_I register
-        return false;
+    const uint8_t cand[2] = { ICM42670_I2C_ADDRESS, ICM42670_I2C_ADDRESS_ALT };
+    for (int i = 0; i < 2; ++i) {
+        address = cand[i]; // Try this first
+        // Try a few times to avoid picking up a one-off glitch
+
+        int hits = 0;
+        for (int t = 0; t < 4; ++t) {
+            uint8_t who = 0, reg = ICM42670_REG_WHO_AM_I;
+            if (!readByte(reg, who)) continue;
+            if (who == ICM42670_WHO_AM_I_RESPONSE) ++hits;
+        }
+
+        if (hits >= 3) { 
+            return true; // success
+        }
     }
-    return who == ICM42670_WHO_AM_I_RESPONSE;
+    return false; // failed to detect address
 }
+
 
 // Initialization
 bool ICM42670::begin() {
-
-    reset();  // Soft reset
 
     // Detect I2C address
     if (!detectAddress()) {
         return false;
     }
+
+    delayMicroseconds(400);
+
+    if (!reset()) {
+        return false;
+    }
+
+
 
     // Check WHO_AM_I
     uint8_t who = 0;
@@ -75,23 +94,25 @@ bool ICM42670::begin() {
     if (who != ICM42670_WHO_AM_I_RESPONSE) {
         return false;
     } 
-    delay(1); // Short delay after reset and detection
+    delayMicroseconds(400); // Short delay after reset and detection
     return true;
 }
 
 // Reset the sensor
 bool ICM42670::reset() {
-    return writeByte(ICM42670_REG_SIGNAL_PATH_RESET, ICM42670_RESET_CONFIG_BITS); // SIGNAL_PATH_RESET register, reset command
-}
+    bool rc = writeByte(ICM42670_REG_SIGNAL_PATH_RESET, ICM42670_RESET_CONFIG_BITS); // SIGNAL_PATH_RESET register, reset command
+    delayMicroseconds(400);   // small wait
 
-// Read WHO_AM_I register
-bool ICM42670::readWhoAmI(uint8_t& who) {
-    return readByte(ICM42670_REG_WHO_AM_I, who); // reads the WHO_AM_I register into given parameter
-}
-
-// Get the detected I2C address
-uint8_t ICM42670::getAddress() const {
-    return address;
+    for (int i = 0; i < 100; ++i) {  // ~5 ms total @ 50 us step
+        uint8_t v = 0;
+        if (readByte(0x00, v) && (v & (1u << 3))) {
+            delayMicroseconds(200);  // settling gap before next writes
+            return true;
+        }
+        delayMicroseconds(50);
+    }
+    
+    return false;
 }
 
 // Start accelerometer with specified ODR and FSR
@@ -117,7 +138,7 @@ bool ICM42670::startAccel(uint16_t odr_hz, uint16_t fsr_g) {
             fsr_bits = ICM42670_ACCEL_FSR_16G;
             aRes = 2048;
             break;
-        default: return -1; // invalid FSR
+        default: return false; // invalid FSR
     }
 
     // Map ODR to register bits
@@ -129,13 +150,13 @@ bool ICM42670::startAccel(uint16_t odr_hz, uint16_t fsr_g) {
         case 400:  odr_bits = ICM42670_ACCEL_ODR_400HZ; break;
         case 800:  odr_bits = ICM42670_ACCEL_ODR_800HZ; break;
         case 1600: odr_bits = ICM42670_ACCEL_ODR_1600HZ; break;
-        default:   return -2; // invalid ODR
+        default:   return false; // invalid ODR
     }
 
     // Combine into ACCEL_CONFIG0: [7:5] = fsr, [3:0] = odr
     uint8_t accel_config0_val = (fsr_bits << 5) | (odr_bits & 0x0F);
     int rc = writeByte(ICM42670_ACCEL_CONFIG0_REG, accel_config0_val);
-    delay(1); 
+    delayMicroseconds(400); 
     if (!rc) return false;
     return true; // success
 }
@@ -163,7 +184,7 @@ bool ICM42670::startGyro(uint16_t odr_hz, uint16_t fsr_dps) {
             fsr_bits = 0x00;
             gRes = 16.4;
             break;
-        default:   return -1;
+        default:   return false;
     }
 
     // Map ODR
@@ -175,20 +196,20 @@ bool ICM42670::startGyro(uint16_t odr_hz, uint16_t fsr_dps) {
         case 400:  odr_bits = 0x07; break;
         case 800:  odr_bits = 0x06; break;
         case 1600: odr_bits = 0x05; break;
-        default:   return -2;
+        default:   return false;
     }
 
     // Write GYRO_CONFIG0
     uint8_t gyro_config0_val = (fsr_bits << 5) | (odr_bits & 0x0F);
     if (!writeByte(ICM42670_GYRO_CONFIG0_REG, gyro_config0_val)) return false;
-    delay(1);
+    delayMicroseconds(400);
     return true;
 }
 
 // Enable low-noise (LN) mode for both accelerometer and gyroscope.
 bool ICM42670::enableAccelGyroLNMode() {
     bool rc = writeByte(ICM42670_PWR_MGMT0_REG , 0x0F); // bits 3:2 = gyro LN, bits 1:0 = accel LN
-    delay(1);
+    delayMicroseconds(400);
     return rc;
 }
 
@@ -236,7 +257,7 @@ bool ICM42670::readSensorData(float& ax, float& ay, float& az,
         gy = (float)gy_raw / gRes;
         gz = (float)gz_raw / gRes;
         t  = ((float)t_raw / 128.0f) + 25.0f;
-        return 0; // success
+        return true; // success
     }
 
 // void ICM42670::calibrateAccel(float *dest1){}

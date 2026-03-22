@@ -4,36 +4,124 @@
 #include <Arduino.h>
 #include <Wire.h>
 
+/** @brief API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.
+ * Datasheet can be found at: https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf
+ * Functions are based on TKJHAT C SDK with minimal modifications to fit Arduino style and the class structure.
+ * 
+ */
+
 class ICM42670 {
 public:
+
+    /** @brief Construct a new ICM42670 object
+     * Default constructor uses the default Wire I2C bus. You can also provide a custom TwoWire instance if needed.
+     * 
+     */
     ICM42670();                // default uses Wire
     ICM42670(TwoWire& w);      // optional I2C bus
 
+    /** @brief Initialize the IMU
+     * 
+     * Performs a soft reset and verifies device identity (WHO_AM_I).
+     * 
+     * @return true on success, false on error.
+     */
     bool begin();
+
+    /** @brief Detect the I2C address of the IMU
+     * 
+     * This is a helper function to handle the case where the AD0 pin is floating, which can cause the address to be either 0x68 or 0x69. It tries both addresses and checks for the correct WHO_AM_I response.
+     * 
+     * @return true if the address was successfully detected, false otherwise.
+     */
     bool detectAddress();
+
+    /** @brief Perform a soft reset of the IMU
+     * 
+     * This function sends the appropriate command to reset the device and waits for it to become ready again.
+     * 
+     * @return true on success, false on error.
+     */
     bool reset();
+
+    /** @brief Read the WHO_AM_I register to verify device identity
+     * 
+     * @param who Reference to a variable where the WHO_AM_I value will be stored.
+     * @return true if the correct WHO_AM_I response was received, false otherwise.
+     */
     bool readWhoAmI(uint8_t& who);
 
-    uint8_t getAddress() const;
+    // void calibrateAccel(float *dest1);
+    // void calibrateGyro(float *dest2);
 
-    void calibrateAccel(float *dest1);
-    void calibrateGyro(float *dest2);
+    /** @brief Start the accelerometer
+     * 
+     * Configures the accelerometer with the requested ODR and FSR.
+     *
+     * @param odr_hz Desired output data rate in Hz (e.g., @ref ICM42670_ACCEL_ODR_DEFAULT).
+     * @param fsr_g  Full-scale range in g (2, 4, 8, 16; e.g., @ref ICM42670_ACCEL_FSR_DEFAULT).
+     * 
+     * @return true on success, false on error.
+     */
+    bool startAccel(uint16_t odr_hz, uint16_t fsr_g);
 
-    bool startAccel(uint16_t rate, uint16_t range);
-    bool startGyro(uint16_t rate, uint16_t range);
+    /** @brief Start the gyroscope
+     * 
+     * Configures the gyroscope with the requested ODR and FSR.
+     *
+     * @param odr_hz Desired output data rate in Hz (e.g., @ref ICM42670_GYRO_ODR_DEFAULT).
+     * @param fsr_dps  Full-scale range in degrees per second (250, 500, 1000, 2000; e.g., @ref ICM42670_GYRO_FSR_DEFAULT).
+     * 
+     * @return true on success, false on error.
+     */
+    bool startGyro(uint16_t odr_hz, uint16_t fsr_dps);
 
+    /** @brief Enable low-noise mode for both accelerometer and gyroscope
+     * 
+     * @return true on success, false on error.
+     */
     bool readSensorData(float& ax, float& ay, float& az,
         float& gx, float& gy, float& gz, float& t);
 
+    /** @brief Enable low-noise mode for both accelerometer and gyroscope
+     * 
+     * @return true on success, false on error.
+     */
     bool enableAccelGyroLnMode(void);
 
+    /** @brief Start IMU with SDK default settings and enable LN mode
+     * 
+     * Calls:
+     * - ::startAccel(@ref ICM42670_ACCEL_ODR_DEFAULT,
+     *                 @ref ICM42670_ACCEL_FSR_DEFAULT)
+     * - ::startGyro (@ref ICM42670_GYRO_ODR_DEFAULT,
+     *                 @ref ICM42670_GYRO_FSR_DEFAULT)
+     * - ::enableAccelGyroLnMode()
+     *
+     * @pre Call ::begin() successfully before this function.
+     *
+     * @return true on success, false on error.
+     */
     bool startWithDefaultValues(void);
 
+    /** @brief Private member variables
+     * 
+    */
 private:
     TwoWire* wire;
     uint8_t address;
 
-    bool writeByte(uint8_t reg, uint8_t value);
+    /** @brief Helper functions for I2C communication
+    * These functions abstract the I2C read/write operations to the device registers.
+     * 
+     * @param reg Register address to read from or write to.
+     * @param value Value to write (for writeByte) or reference to store read value (for readByte).
+     * @param buffer Buffer to store multiple bytes for readBytes.
+     * @param len Number of bytes to read for readBytes.
+     * 
+     * @return true on success, false on error.
+    * 
+    */
     bool readByte(uint8_t reg, uint8_t& value);
     bool readBytes(uint8_t reg, uint8_t* buffer, size_t len);
 };
