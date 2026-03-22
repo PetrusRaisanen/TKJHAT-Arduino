@@ -16,13 +16,18 @@ public:
 
     uint8_t getAddress() const;
 
-    // bool startAccel(uint16_t rate, uint16_t range);
-    // bool startGyro(uint16_t rate, uint16_t range);
+    void calibrateAccel(float *dest1);
+    void calibrateGyro(float *dest2);
 
-    // bool readSensorData(float& ax, float& ay, float& az,
-    //     float& gx, float& gy, float& gz, float& t);
+    bool startAccel(uint16_t rate, uint16_t range);
+    bool startGyro(uint16_t rate, uint16_t range);
 
+    bool readSensorData(float& ax, float& ay, float& az,
+        float& gx, float& gy, float& gz, float& t);
 
+    bool enableAccelGyroLnMode(void);
+
+    bool startWithDefaultValues(void);
 
 private:
     TwoWire* wire;

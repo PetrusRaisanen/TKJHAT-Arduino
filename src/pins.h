@@ -53,6 +53,18 @@
 #define SSD1306_I2C_ADDRESS                     0x3C   /**< I2C address of the SSD1306 OLED display. */
 /** @} */
 
+/** @name VEML6030
+ *  Light sensor address, and registers
+ *  @{ */
+#define VEML6030_I2C_ADDR                       0x10   /**< I2C address of the VEML6030 sensor. */
+#define VEML6030_CONFIG_REG                     0x00   /**< Configuration register. */
+#define VEML6030_ALS_REG                        0x04   /**< Ambient Light Sensing (ALS) data register. */
+/** @} */
+
+/* =========================
+ *  ICM-42670 (IMU)
+ * ========================= */
+
 /** @name I2C addressing
  *  I2C address and identity registers.
  *  @{ */
@@ -60,6 +72,20 @@
 #define ICM42670_I2C_ADDRESS_ALT                0x69   /**< Alternate I2C address (autodetect helper uses both). */
 #define ICM42670_REG_WHO_AM_I                   0x75   /**< WHO_AM_I register address. */
 #define ICM42670_WHO_AM_I_RESPONSE              0x67   /**< Expected WHO_AM_I value. */
+/** @} */
+
+/** @name Interrupts
+ *  Interrupt configuration registers and defaults.
+ *  @{ */
+#define ICM42670_INT_CONFIG                     0x06   /**< INT1/INT2 routing/config register. */
+#define ICM42670_INT1_CONFIG_VALUE              0x02   /**< Default INT1 config: active-low, pulsed (course default). */
+/** @} */
+
+/** @name Transfer limits
+ *  Helper limits for SDK buffer handling.
+ *  @{ */
+#define ICM42670_MAX_READ_LENGTH                256    /**< Max contiguous read length used by the SDK. */
+#define ICM42670_MAX_WRITE_LENGTH               256    /**< Max contiguous write length used by the SDK. */
 /** @} */
 
 /** @name Configuration registers
@@ -72,10 +98,64 @@
 #define ICM42670_RESET_CONFIG_BITS              0x10   /**< Value used for soft reset sequence. */
 /** @} */
 
-/** @name VEML6030
- *  Light sensor address, and registers
+/** @name Accelerometer FSR encodings
+ *  ACCEL_CONFIG0[7:5]. Full-scale range selection.
  *  @{ */
-#define VEML6030_I2C_ADDR                       0x10   /**< I2C address of the VEML6030 sensor. */
-#define VEML6030_CONFIG_REG                     0x00   /**< Configuration register. */
-#define VEML6030_ALS_REG                        0x04   /**< Ambient Light Sensing (ALS) data register. */
+#define ICM42670_ACCEL_FSR_2G                   0x03   /**< ±2 g. */
+#define ICM42670_ACCEL_FSR_4G                   0x02   /**< ±4 g. */
+#define ICM42670_ACCEL_FSR_8G                   0x01   /**< ±8 g. */
+#define ICM42670_ACCEL_FSR_16G                  0x00   /**< ±16 g. */
+#define ICM42670_ACCEL_FSR_DEFAULT              4      /**< SDK default FSR in g (±4 g). */
 /** @} */
+
+/** @name Gyroscope FSR encodings
+ *  GYRO_CONFIG0[7:5]. Full-scale range selection.
+ *  @{ */
+#define ICM42670_GYRO_FSR_250DPS                0x03   /**< ±250 dps. */
+#define ICM42670_GYRO_FSR_500DPS                0x02   /**< ±500 dps. */
+#define ICM42670_GYRO_FSR_1000DPS               0x01   /**< ±1000 dps. */
+#define ICM42670_GYRO_FSR_2000DPS               0x00   /**< ±2000 dps. */
+#define ICM42670_GYRO_FSR_DEFAULT               250    /**< SDK default FSR in dps (±250 dps). */
+/** @} */
+
+/** @name Accelerometer ODR encodings (LN mode)
+ *  ACCEL_CONFIG0[3:0]. Output Data Rate selection in Low-Noise mode.
+ *  @{ */
+#define ICM42670_ACCEL_ODR_25HZ                 0x0B   /**< 25 Hz. */
+#define ICM42670_ACCEL_ODR_50HZ                 0x0A   /**< 50 Hz. */
+#define ICM42670_ACCEL_ODR_100HZ                0x09   /**< 100 Hz. */
+#define ICM42670_ACCEL_ODR_200HZ                0x08   /**< 200 Hz. */
+#define ICM42670_ACCEL_ODR_400HZ                0x07   /**< 400 Hz. */
+#define ICM42670_ACCEL_ODR_800HZ                0x06   /**< 800 Hz. */
+#define ICM42670_ACCEL_ODR_1600HZ               0x05   /**< 1600 Hz. */
+#define ICM42670_ACCEL_ODR_DEFAULT              100    /**< SDK default ODR in Hz (100 Hz). */
+/** @} */
+
+/** @name Gyroscope ODR encodings
+ *  GYRO_CONFIG0[3:0]. Output Data Rate selection.
+ *  @{ */
+#define ICM42670_GYRO_ODR_25HZ                  0x0B   /**< 25 Hz. */
+#define ICM42670_GYRO_ODR_50HZ                  0x0A   /**< 50 Hz. */
+#define ICM42670_GYRO_ODR_100HZ                 0x09   /**< 100 Hz. */
+#define ICM42670_GYRO_ODR_200HZ                 0x08   /**< 200 Hz. */
+#define ICM42670_GYRO_ODR_400HZ                 0x07   /**< 400 Hz. */
+#define ICM42670_GYRO_ODR_800HZ                 0x06   /**< 800 Hz. */
+#define ICM42670_GYRO_ODR_1600HZ                0x05   /**< 1600 Hz. */
+#define ICM42670_GYRO_ODR_DEFAULT               100    /**< SDK default ODR in Hz (100 Hz). */
+/** @} */
+
+/** @name Power / mode bits
+ *  Encodings for PWR_MGMT0 sensor-mode fields.
+ *  @{ */
+#define ICM42670_ACCEL_MODE_LN                  0x03   /**< Accel Low-Noise mode code for PWR_MGMT0 accel field. */
+#define ICM42670_GYRO_MODE_LN                   0x0C   /**< Gyro Low-Noise mode code for PWR_MGMT0 gyro field. */
+/** @} */
+
+/** @name Sensor data window
+ *  Starting register for burst reads of temp/accel/gyro data.
+ *  @{ */
+#define ICM42670_SENSOR_DATA_START_REG          0x09   /**< First data register for TEMP/ACCEL/GYRO burst read. */
+/** @} */
+
+/** @} */ /* end of group  of registers*/
+
