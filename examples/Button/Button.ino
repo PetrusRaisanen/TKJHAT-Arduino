@@ -1,5 +1,4 @@
 // This code is an example of how to use the Button class
-
 #include <Button.h>
 #include <pins.h>
 

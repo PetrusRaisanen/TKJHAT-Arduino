@@ -1,5 +1,4 @@
 // This code is an example of how to use the Led class to control a simple LED
-
 #include <Led.h>
 #include <pins.h>
 

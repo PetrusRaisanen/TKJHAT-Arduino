@@ -39,7 +39,7 @@ bool ICM42670::readBytes(uint8_t reg, uint8_t* buffer, size_t len) {
     if (wire->endTransmission(false) != 0) {
         return false;
     }
-    if (wire->requestFrom(address, (uint8_t)len) != len) {
+    if (wire->requestFrom(address, (uint8_t)len) != len) { // now we want to read 'len' bytes
         return false;
     }
     for (size_t i = 0; i < len; ++i) {
@@ -51,7 +51,7 @@ bool ICM42670::readBytes(uint8_t reg, uint8_t* buffer, size_t len) {
 // Address detection
 bool ICM42670::detectAddress() {
     uint8_t who = 0;
-    if (!readByte(ICM42670_REG_WHO_AM_I, who)) {
+    if (!readByte(ICM42670_REG_WHO_AM_I, who)) { // try to read the WHO_AM_I register
         return false;
     }
     return who == ICM42670_WHO_AM_I_RESPONSE;
