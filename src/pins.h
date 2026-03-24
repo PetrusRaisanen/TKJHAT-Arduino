@@ -10,13 +10,18 @@
 #define DEFAULT_I2C_SCL_PIN   13  /**< I²C clock pin (SCL) */
 /** @} */
 
+/** @name Temperature/Humidity Sensor (HDC2021)
+ *  @{
+ */
+#define HDC2021_INTERRUPT     21   /**< Temperature & humidity sensor interrupt pin (GPIO 21) */
+/** @} */
+
 /** @name Buttons / Switches
  *  @{
  */
 #define SW1_PIN               2   /**< SW1 button pin (GPIO 2) */
 #define SW2_PIN               22  /**< SW2 button pin (GPIO 22) */
 /** @} */
-
 
 /** @name LEDs
  *  @{
@@ -30,7 +35,6 @@
 #define BUZZER_PIN            17  /**< Buzzer control pin (GPIO 17) */
 /** @} */
 
-
 /** @name RGB LED (common-anode)
  *  @{
  */
@@ -38,7 +42,6 @@
 #define RGB_LED_G             19  /**< RGB LED green channel (GPIO 19) */
 #define RGB_LED_B             20  /**< RGB LED blue channel (GPIO 20) */
 /** @} */
-
 
 /** @name PDM Microphone
  *  @{
@@ -159,3 +162,22 @@
 
 /** @} */ /* end of group  of registers*/
 
+/* =========================
+ *  HDC2021
+ * ========================= */
+
+ /** @name HDC2021
+ *  Humidity sensor address, registers and interruptions thresholds
+ *  @{ */
+#define HDC2021_I2C_ADDRESS                     0x40   /**< I2C address of the HDC2021 sensor. */
+#define HDC2021_TEMP_LOW                        0x00   /**< Temperature low byte register. */
+#define HDC2021_TEMP_HIGH                       0x01   /**< Temperature high byte register. */
+#define HDC2021_HUMIDITY_LOW                    0x02   /**< Humidity low byte register. */
+#define HDC2021_HUMIDITY_HIGH                   0x03   /**< Humidity high byte register. */
+#define HDC2021_CONFIG                          0x0E   /**< Configuration register. */
+#define HDC2021_MEASUREMENT_CONFIG              0x0F   /**< Measurement configuration register. */
+#define HDC2021_TEMP_THR_L                      0x13   /**< Low temperature threshold. */
+#define HDC2021_TEMP_THR_H                      0x14   /**< High temperature threshold. */
+#define HDC2021_HUMID_THR_L                     0x15   /**< Low humidity threshold. */
+#define HDC2021_HUMID_THR_H                     0x16   /**< High humidity threshold. */
+/** @} */
