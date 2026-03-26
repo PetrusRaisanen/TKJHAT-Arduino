@@ -11,7 +11,8 @@ TKJHAT::TKJHAT()
       display(),
       rgbLed(RGB_LED_R, RGB_LED_G, RGB_LED_B),
       icm42670(),
-      lightSensor(DEFAULT_I2C_SDA_PIN, DEFAULT_I2C_SCL_PIN)
+      lightSensor(DEFAULT_I2C_SDA_PIN, DEFAULT_I2C_SCL_PIN),
+      hdc2021(DEFAULT_I2C_SDA_PIN, DEFAULT_I2C_SCL_PIN, HDC2021_INTERRUPT)
       {
 }
 
@@ -29,6 +30,7 @@ void TKJHAT::begin() {
     display.begin();
     icm42670.begin();
     lightSensor.begin();
+    hdc2021.begin();
 
     // Initial states
     led.set(false);

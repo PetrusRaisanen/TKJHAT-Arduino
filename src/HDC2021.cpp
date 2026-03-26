@@ -96,32 +96,61 @@ void HDC2021::triggerMeasurement() {
     writeRegister(HDC2021_MEASUREMENT_CONFIG, cfg | 0x01);
 }
 
-
+// This function reads the temperature from the sensor
+// Temperature is 16-bit value, and we will read it as two bytes (low and high)
+// This is because i2c works in 8-bit chunks
+// When TEMP_LOW is read, the sensor will automatically update TEMP_HIGH with the corresponding high byte of the temperature measurement
 float HDC2021:: readTemperature() {
+    Wire.beginTransmission(HDC2021_I2C_ADDRESS);
+    Wire.write(HDC2021_TEMP_LOW);
+    Wire.endTransmission(false); // Keeps the connection active
 
+    Wire.requestFrom(HDC2021_I2C_ADDRESS, (uint8_t)2); // Request 2 bytes (low and high)
+    uint8_t low = Wire.read(); // Read the low byte of the temperature measurement and store it in a variable
+    uint8_t high = Wire.read(); // Read the high byte of the temperature measurement and store it in a variable
+    uint16_t temp = ((uint16_t)high << 8) | low; // Combine the high and low bytes to form a 16-bit temperature value
+    return temp / 65536.0 * 165 - 40; // Convert the raw temp data into degrees celsius
 }
 
-
+// This function reads the humidity from the sensor
+// Works similarly to the temperature reading, but with different registers and conversion formula
+// Humidity is also a 16-bit value
 float HDC2021::readHumidity() {
+    Wire.beginTransmission(HDC2021_I2C_ADDRESS);
+    Wire.write(HDC2021_HUMIDITY_LOW);
+    Wire.endTransmission(false);
 
+    Wire.requestFrom(HDC2021_I2C_ADDRESS, (uint8_t)2);
+    uint8_t lowH = Wire.read();
+    uint8_t highH = Wire.read();
+    uint16_t humid = ((uint16_t)highH << 8) | lowH;
+    return humid / 65536.0 * 100; // Convert the raw humidity data into percentage
 }
 
-
+// This function sets the low temperature threshold for the sensor's interrupt
 void HDC2021::setLowTempThreshold(float temp) {
-
+    temp = (temp < -40.0f) ? -40.0f : (temp > 125.0f) ? 125.0f : temp;
+    uint8_t tempThresh = (uint8_t)((temp + 40.0f) * 256.0f / 165.0f);
+    writeRegister(HDC2021_TEMP_THR_L, tempThresh);
 }
 
-
+// This function sets the high temperature threshold for the sensor's interrupt
 void HDC2021::setHighTempThreshold(float temp) {
-
+    temp = (temp < -40.0f) ? -40.0f : (temp > 125.0f) ? 125.0f : temp;
+    uint8_t tempThresh = (uint8_t)((temp + 40.0f) * 256.0f / 165.0f);
+    writeRegister(HDC2021_TEMP_THR_H, tempThresh);
 }
 
-
+// This function sets the low humidity threshold for the sensor's interrupt
 void HDC2021::setLowHumidityThreshold(float humid) {
-
+    humid = (humid < 0.0f) ? 0.0f : (humid > 100.0f) ? 100.0f : humid;
+    uint8_t humidThresh = (uint8_t)(humid * 2.56f);
+    writeRegister(HDC2021_HUMID_THR_L, humidThresh);
 }
 
-
+// This function sets the high humidity threshold for the sensor's interrupt
 void HDC2021::setHighHumidityThreshold(float humid) {
-
+    humid = (humid < 0.0f) ? 0.0f : (humid > 100.0f) ? 100.0f : humid;
+    uint8_t humidThresh = (uint8_t)(humid * 2.56f);
+    writeRegister(HDC2021_HUMID_THR_H, humidThresh);
 }
