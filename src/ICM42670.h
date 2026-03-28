@@ -47,6 +47,7 @@ public:
     /** @brief Read the WHO_AM_I register to verify device identity
      * 
      * @param who Reference to a variable where the WHO_AM_I value will be stored.
+     * 
      * @return true if the correct WHO_AM_I response was received, false otherwise.
      */
     bool readWhoAmI(uint8_t& who);
@@ -106,10 +107,17 @@ public:
 
     /** @brief Private member variables
      * 
+        * - wire: Pointer to the TwoWire instance used for I2C communication.
+        * - address: I2C address of the device (0x68 or 0x69).
+        * - aRes: Accelerometer resolution in LSB/g, calculated based on the FSR setting.
+        * - gRes: Gyroscope resolution in LSB/dps, calculated based on the FSR setting.
+     * 
     */
 private:
     TwoWire* wire;
     uint8_t address;
+    float aRes;
+    float gRes;
 
     /** @brief Helper functions for I2C communication
     * These functions abstract the I2C read/write operations to the device registers.
@@ -124,6 +132,7 @@ private:
     */
     bool readByte(uint8_t reg, uint8_t& value);
     bool readBytes(uint8_t reg, uint8_t* buffer, size_t len);
+    bool writeByte(uint8_t reg, uint8_t value);
 };
 
 #endif

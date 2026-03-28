@@ -1,10 +1,12 @@
 #include "Display.h"
 #include "display/font.h"
 #include "pins.h"
+
 // Instance that initializes the display
 Display::Display() {
     _disp.external_vcc = false;
 }
+
 // Display initialization
 void Display::begin() {
 
@@ -15,6 +17,7 @@ void Display::begin() {
 
     ssd1306_clear(&_disp);  // Clear the display
 }
+
 // Write text to the display with a specified scale
 void Display::writeText(const char* text, uint8_t scale) {
     if (!text) return;

@@ -4,10 +4,14 @@
 
 ICM42670::ICM42670()
     : wire(&Wire), address(0) {
+        float aRes = 0; // accelerometer resolution (LSB/g)
+        float gRes = 0; // gyroscope resolution (LSB/dps)
 }
 
 ICM42670::ICM42670(TwoWire& w)
     : wire(&w), address(0) {
+        float aRes = 0; // accelerometer resolution (LSB/g)
+        float gRes = 0; // gyroscope resolution (LSB/dps)
 }
 
 // Write a single byte to a register
@@ -207,7 +211,7 @@ bool ICM42670::startGyro(uint16_t odr_hz, uint16_t fsr_dps) {
 }
 
 // Enable low-noise (LN) mode for both accelerometer and gyroscope.
-bool ICM42670::enableAccelGyroLNMode() {
+bool ICM42670::enableAccelGyroLnMode() {
     bool rc = writeByte(ICM42670_PWR_MGMT0_REG , 0x0F); // bits 3:2 = gyro LN, bits 1:0 = accel LN
     delayMicroseconds(400);
     return rc;
@@ -218,7 +222,7 @@ bool ICM42670::startWithDefaultValues() {
     bool rc;
 
     // Put both sensors into Low-Noise mode
-    rc = enableAccelGyroLNMode();
+    rc = enableAccelGyroLnMode();
     if (!rc) return false;
 
     // Start accelerometer with defaults
