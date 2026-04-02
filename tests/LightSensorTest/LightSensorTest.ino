@@ -22,8 +22,6 @@ void test(const char* testName, int expected, int actual) {
   }
 }
 
-
-
 void setup() {
   Serial.begin(115200);
   delay(2000);
