@@ -23,20 +23,20 @@ void test(const char* testName, int expected, int actual) {
 }
 
 // This test tests the functionality of the set() method by setting the LED on and verifying that the pin reads HIGH.
-void test_set_true_turns_led_on() {
+void testSetTrueTurnsLedOn() {
   led.set(true);
   delay(10);
   test("set(true) turns LED on", HIGH, digitalRead(RED_LED_PIN));
 }
 
-void test_set_false_turns_led_off() {
+void testSetFalseTurnsLedOff() {
   led.set(false);
   delay(10);
   test("set(false) turns LED off", LOW, digitalRead(RED_LED_PIN));
 }
 
 // This test tests the functionality of the toggle() method by toggling the LED state from LOW to HIGH and verifying that the pin reads HIGH.
-void toggle_from_low_to_high() {
+void testToggleFromLowToHigh() {
   led.set(false);
   delay(10);
   led.toggle();
@@ -46,7 +46,7 @@ void toggle_from_low_to_high() {
 }
 
 // This test tests the functionality of the toggle() method by toggling the LED state from HIGH to LOW and verifying that the pin reads LOW.
-void toggle_from_high_to_low() {
+void testToggleFromHighToLow() {
   led.set(true);
   delay(10);
   led.toggle();
@@ -61,10 +61,10 @@ void setup() {
   Serial.println("Starting LED tests...");
   led.begin();
 
-  test_set_true_turns_led_on();
-  test_set_false_turns_led_off();
-  toggle_from_low_to_high();
-  toggle_from_high_to_low();
+  testSetTrueTurnsLedOn();
+  testSetFalseTurnsLedOff();
+  testToggleFromLowToHigh();
+  testToggleFromHighToLow();
 
   Serial.println();
   Serial.print("Passed: ");

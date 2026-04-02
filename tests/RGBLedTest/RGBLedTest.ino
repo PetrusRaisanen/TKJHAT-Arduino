@@ -23,42 +23,42 @@ void test(const char* testName, int expected, int actual) {
 }
 
 // This test test tests if the red channel of the RGB LED returns HIGH (off)
-void test_red_returns_high() {
+void testRedReturnsHigh() {
   rgbLed.write(0, 255, 255);
   delay(10);
   test("Red channel returns HIGH when pwm is 255", HIGH, digitalRead(RGB_LED_R));
 }
 
 // This test test tests if the green channel of the RGB LED returns HIGH (off)
-void test_green_returns_high() {
+void testGreenReturnsHigh() {
   rgbLed.write(255, 0, 255);
   delay(10);
   test("Green channel returns HIGH when pwm is 255", HIGH, digitalRead(RGB_LED_G));
 }
 
 // This test test tests if the blue channel of the RGB LED returns HIGH (off)
-void test_blue_returns_high() {
+void testBlueReturnsHigh() {
   rgbLed.write(255, 255, 0);
   delay(10);
   test("Blue channel returns HIGH when pwm is 255", HIGH, digitalRead(RGB_LED_B));
 }
 
 // This test tests if the red channel of the RGB LED returns LOW (on)
-void test_red_returns_low() {
+void testRedReturnsLow() {
   rgbLed.write(255, 0, 0);
   delay(10);
   test("Red channel returns LOW when pwm is 0", LOW, digitalRead(RGB_LED_R));
 }
 
 // This test tests if the green channel of the RGB LED returns LOW (on)
-void test_green_returns_low() {
+void testGreenReturnsLow() {
   rgbLed.write(0, 255, 0);
   delay(10);
   test("Green channel returns LOW when pwm is 0", LOW, digitalRead(RGB_LED_G));
 }
 
 // This test tests if the blue channel of the RGB LED returns LOW (on)
-void test_blue_returns_low() {  
+void testBlueReturnsLow() {  
   rgbLed.write(0, 0, 255);
   delay(10);
   test("Blue channel returns LOW when pwm is 0", LOW, digitalRead(RGB_LED_B));
@@ -71,12 +71,12 @@ void setup() {
   Serial.println("Starting RGBLED tests...");
   rgbLed.begin();
 
-    test_red_returns_high();
-    test_green_returns_high();
-    test_blue_returns_high();
-    test_red_returns_low();
-    test_green_returns_low();
-    test_blue_returns_low();
+    testRedReturnsHigh();
+    testGreenReturnsHigh();
+    testBlueReturnsHigh();
+    testRedReturnsLow();
+    testGreenReturnsLow();
+    testBlueReturnsLow();
 
   Serial.println();
   Serial.print("Passed: ");
