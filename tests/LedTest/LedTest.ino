@@ -22,10 +22,30 @@ void test(const char* testName, int expected, int actual) {
   }
 }
 
+// This test tests the functionality of the set() method by setting the LED on and verifying that the pin reads HIGH.
 void test_set_true_turns_led_on() {
   led.set(true);
   delay(10);
   test("set(true) turns LED on", HIGH, digitalRead(RED_LED_PIN));
+}
+
+// This test tests the functionality of the toggle() method by toggling the LED state from LOW to HIGH and verifying that the pin reads HIGH.
+void toggle_from_low_to_high() {
+  led.set(false);
+  delay(10);
+  led.toggle();
+  delay(10);
+  test("toggle() LOW -> HIGH", HIGH, digitalRead(RED_LED_PIN));
+
+}
+
+// This test tests the functionality of the toggle() method by toggling the LED state from HIGH to LOW and verifying that the pin reads LOW.
+void toggle_from_high_to_low() {
+  led.set(true);
+  delay(10);
+  led.toggle();
+  delay(10);
+  test("toggle() HIGH -> LOW", LOW, digitalRead(RED_LED_PIN));
 }
 
 void setup() {
