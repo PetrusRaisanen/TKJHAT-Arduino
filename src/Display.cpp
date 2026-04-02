@@ -16,13 +16,15 @@ void Display::begin() {
     ssd1306_poweron(&_disp);    // Power on the display
 
     ssd1306_clear(&_disp);  // Clear the display
+
+    ssd1306_show(&_disp);   // Update the display to show the cleared state
 }
 
 // Write text to the display with a specified scale
-void Display::writeText(const char* text, uint8_t scale) {
+void Display::writeText(int16_t x, int16_t y, const char* text, uint8_t scale) {
     if (!text) return;
 
-    ssd1306_draw_string(&_disp, 8, 24, scale, text);
+    ssd1306_draw_string(&_disp, (uint32_t)x, (uint32_t)y, scale, text);
     ssd1306_show(&_disp);
 }
 

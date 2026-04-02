@@ -42,7 +42,7 @@ public:
      * @param scale The scale of the text (default is 1)
      * 
      */
-    void writeText(const char* text, uint8_t scale = 1);
+    void writeText(int16_t x, int16_t y, const char* text, uint8_t scale = 1);
 
     /** @brief Put a pixel on the display
      * 

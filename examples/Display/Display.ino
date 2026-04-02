@@ -1,7 +1,7 @@
 // This code is an example of how to use the Display class to show text on the display
 
 #include <Arduino.h>
-#include <TKJHAT.h>
+#include "TKJHAT.h"
 
 // Create TKJHAT object which provides access to onboard components
 TKJHAT hat;
@@ -12,11 +12,23 @@ void setup() {
     hat.begin();
 }
 
-// Displays text on the screen, waits, clears the display, and repeats.
 void loop() {
-    hat.display.writeText("Hello World!", 1);
+    hat.display.writeText(0, 0, "Hello HAT!", 2);
+    delay(2000);
+    hat.display.clear();
+
+    hat.display.drawLine(0, 0, 127, 63); // Draw a diagonal line across the display
+    delay(2000);
+
+    hat.display.drawLine(0, 63, 127, 0); // Draw the opposite diagonal
+    delay(2000);
+    hat.display.drawCircle(64, 32, 20, false); // Draw an empty circle at the center of the display
     delay(2000);
 
     hat.display.clear();
-    delay(1000);
+    hat.display.writeText(0, 0, "Goodbye!", 2);
+    delay(2000);
+
+    hat.display.clear();
+    hat.display.stopDisplay(); // Power off the display
 }
