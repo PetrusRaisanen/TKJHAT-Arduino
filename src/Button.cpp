@@ -9,7 +9,8 @@ Button::Button(uint8_t pin) {
 void Button::begin() {
     pinMode(pin, INPUT_PULLUP);
 }
-// Check if the button is pressed (active LOW)
+// Check if the button is pressed (active HIGH)
 bool Button::isPressed() {
     return digitalRead(pin) == HIGH;
 }
+
