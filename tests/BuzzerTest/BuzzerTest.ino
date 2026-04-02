@@ -22,7 +22,7 @@ void test(const char* testName, int expected, int actual) {
   }
 }
 
-// This test tests the, is BUZZER_PIN LOW after turnOff() funktion
+// This test tests the, is BUZZER_PIN LOW after turnOff() function
 void testTurnOff() {
   buzzer.turnOff();
   delay(10);
@@ -30,7 +30,7 @@ void testTurnOff() {
 
 }
 
-// This test tests the, is BUZZER_PIN LOW after playTone() funktion
+// This test tests the, is BUZZER_PIN LOW after playTone() function
 void testPlayTone() {
   buzzer.playTone(100, 100);
   delay(10);
