@@ -13,4 +13,3 @@ void Button::begin() {
 bool Button::isPressed() {
     return digitalRead(pin) == HIGH;
 }
-

@@ -1,6 +1,4 @@
 // This code is an example of how to use the Display class to show text on the display
-
-#include <Arduino.h>
 #include "TKJHAT.h"
 
 // Create TKJHAT object which provides access to onboard components
@@ -13,7 +11,7 @@ void setup() {
 }
 
 void loop() {
-    hat.display.writeText(0, 0, "Hello HAT!", 2);
+    hat.display.writeText("Hello HAT!");
     delay(2000);
     hat.display.clear();
 
@@ -26,7 +24,7 @@ void loop() {
     delay(2000);
 
     hat.display.clear();
-    hat.display.writeText(0, 0, "Goodbye!", 2);
+    hat.display.writeText("Goodbye!");
     delay(2000);
 
     hat.display.clear();

@@ -20,12 +20,27 @@ void Display::begin() {
     ssd1306_show(&_disp);   // Update the display to show the cleared state
 }
 
-// Write text to the display with a specified scale
-void Display::writeText(int16_t x, int16_t y, const char* text, uint8_t scale) {
+
+void Display::writeText(const char* text) {
+    if (!text) return;
+    // Draw the text at the specified position with a font size of 2
+    ssd1306_draw_string(&_disp, 8, 24, 2, text);
+        // Update the display
+    ssd1306_show(&_disp);
+
+    // Delay for 800 milliseconds
+    delay(800);
+}
+
+// Write text to the display with a specified scale and position
+void Display::writeTextPositioned(int16_t x, int16_t y, const char* text, uint8_t scale) {
     if (!text) return;
 
     ssd1306_draw_string(&_disp, (uint32_t)x, (uint32_t)y, scale, text);
     ssd1306_show(&_disp);
+
+    // Delay for 800 milliseconds
+    delay(800);
 }
 
 void Display::putp(int16_t x, int16_t y) {

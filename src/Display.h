@@ -36,13 +36,20 @@ public:
      */
     void begin();
 
-    /** @brief Write text to the display with a specified scale
+    /** @brief Write text to the display with a scale of 2 at center (8,24)
+     * 
+     * @param text The text to display
+     */
+    void writeText(const char* text);
+
+    /** @brief Write text to the display with a specified scale and position
      * 
      * @param text The text to display
      * @param scale The scale of the text (default is 1)
-     * 
+     * @param x The x-coordinate of the text
+     * @param y The y-coordinate of the text
      */
-    void writeText(int16_t x, int16_t y, const char* text, uint8_t scale = 1);
+    void writeTextPositioned(int16_t x, int16_t y, const char* text, uint8_t scale = 1);
 
     /** @brief Put a pixel on the display
      * 
