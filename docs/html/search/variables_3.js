@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['height_0',['height',['../structssd1306__t.html#a966cf732ff8115ad6970853bdfed44a5',1,'ssd1306_t']]]
+  ['external_5fvcc_0',['external_vcc',['../structssd1306__t.html#a6a21df12c17f2611931c25121dae3df8',1,'ssd1306_t']]]
 ];

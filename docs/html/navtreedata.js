@@ -25,6 +25,8 @@
 var NAVTREE =
 [
   [ "Arduino TKJHAT", "index.html", [
+    [ "TKJHAT Arduino Library", "index.html", "index" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -47,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_button_8cpp_source.html"
+"_button_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

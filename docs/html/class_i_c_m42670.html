@@ -107,7 +107,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. Datasheet can be found at: <a href="https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf">https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Arduino-style interface for the TKJHAT board.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure.  
+<p>API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. Datasheet can be found at: <a href="https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf">https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_i_c_m42670_8h_source.html">ICM42670.h</a>&gt;</code></p>
@@ -137,7 +137,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aeef53dfcc5a8533c3bd3c0f184c0fe3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start IMU with SDK default settings and enable LN mode.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. Datasheet can be found at: <a href="https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf">https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Arduino-style interface for the TKJHAT board.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure. </p>
+<div class="textblock"><p>API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. Datasheet can be found at: <a href="https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf">https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure. </p>
 
 <p class="definition">Definition at line <a class="el" href="_i_c_m42670_8h_source.html#l00013">13</a> of file <a class="el" href="_i_c_m42670_8h_source.html">ICM42670.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -160,10 +160,6 @@ Public Member Functions</h2></td></tr>
 <p>Performs a soft reset and verifies device identity (WHO_AM_I).</p>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00078">78</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="_i_c_m42670_8cpp_source.html#l00056">detectAddress()</a>, and <a class="el" href="_i_c_m42670_8cpp_source.html#l00106">reset()</a>.</p>
-
 </div>
 </div>
 <a id="a5bb2ce4fb0e0bcf9ddb2912b38a7cede" name="a5bb2ce4fb0e0bcf9ddb2912b38a7cede"></a>
@@ -185,10 +181,6 @@ Public Member Functions</h2></td></tr>
 <p>This is a helper function to handle the case where the AD0 pin is floating, which can cause the address to be either 0x68 or 0x69. It tries both addresses and checks for the correct WHO_AM_I response.</p>
 <dl class="section return"><dt>Returns</dt><dd>true if the address was successfully detected, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00056">56</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_i_c_m42670_8cpp_source.html#l00078">begin()</a>.</p>
-
 </div>
 </div>
 <a id="a83aaaf089a1e4592530cdb6dbe35cc54" name="a83aaaf089a1e4592530cdb6dbe35cc54"></a>
@@ -208,10 +200,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Enable low-noise mode for both accelerometer and gyroscope. </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00214">214</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_i_c_m42670_8cpp_source.html#l00221">startWithDefaultValues()</a>.</p>
 
 </div>
 </div>
@@ -262,8 +250,6 @@ Public Member Functions</h2></td></tr>
 <p>Enable low-noise mode for both accelerometer and gyroscope. </p>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00239">239</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
 </div>
 </div>
 <a id="a33908302f5af30350c1e7a399fc68e75" name="a33908302f5af30350c1e7a399fc68e75"></a>
@@ -311,10 +297,6 @@ Public Member Functions</h2></td></tr>
 <p>This function sends the appropriate command to reset the device and waits for it to become ready again.</p>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00106">106</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_i_c_m42670_8cpp_source.html#l00078">begin()</a>.</p>
-
 </div>
 </div>
 <a id="a21f753056f0ad44d71d023f7d3c0e1b1" name="a21f753056f0ad44d71d023f7d3c0e1b1"></a>
@@ -340,16 +322,12 @@ Public Member Functions</h2></td></tr>
 <p>Configures the accelerometer with the requested ODR and FSR.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">odr_hz</td><td>Desired output data rate in Hz (e.g., ICM42670_ACCEL_ODR_DEFAULT). </td></tr>
-    <tr><td class="paramname">fsr_g</td><td>Full-scale range in g (2, 4, 8, 16; e.g., ICM42670_ACCEL_FSR_DEFAULT).</td></tr>
+    <tr><td class="paramname">odr_hz</td><td>Desired output data rate in Hz (e.g., <a class="el" href="group___macros.html#ga146f26b8804073ca0ec852c0a6b8a873" title="ICM42670_ACCEL_ODR_DEFAULT">ICM42670_ACCEL_ODR_DEFAULT</a>). </td></tr>
+    <tr><td class="paramname">fsr_g</td><td>Full-scale range in g (2, 4, 8, 16; e.g., <a class="el" href="group___macros.html#ga51628454e4633200147136b812075518" title="ICM42670_ACCEL_FSR_DEFAULT">ICM42670_ACCEL_FSR_DEFAULT</a>).</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00123">123</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_i_c_m42670_8cpp_source.html#l00221">startWithDefaultValues()</a>.</p>
 
 </div>
 </div>
@@ -376,16 +354,12 @@ Public Member Functions</h2></td></tr>
 <p>Configures the gyroscope with the requested ODR and FSR.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">odr_hz</td><td>Desired output data rate in Hz (e.g., ICM42670_GYRO_ODR_DEFAULT). </td></tr>
-    <tr><td class="paramname">fsr_dps</td><td>Full-scale range in degrees per second (250, 500, 1000, 2000; e.g., ICM42670_GYRO_FSR_DEFAULT).</td></tr>
+    <tr><td class="paramname">odr_hz</td><td>Desired output data rate in Hz (e.g., <a class="el" href="group___macros.html#ga776be99f7a0d33b09645d2d94a5a7e18" title="ICM42670_GYRO_ODR_DEFAULT">ICM42670_GYRO_ODR_DEFAULT</a>). </td></tr>
+    <tr><td class="paramname">fsr_dps</td><td>Full-scale range in degrees per second (250, 500, 1000, 2000; e.g., <a class="el" href="group___macros.html#ga8c1fff6558ecdb8c1eb731bc76e99438" title="ICM42670_GYRO_FSR_DEFAULT">ICM42670_GYRO_FSR_DEFAULT</a>).</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00169">169</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_i_c_m42670_8cpp_source.html#l00221">startWithDefaultValues()</a>.</p>
 
 </div>
 </div>
@@ -406,22 +380,17 @@ Public Member Functions</h2></td></tr>
 
 <p>Start IMU with SDK default settings and enable LN mode. </p>
 <p>Calls:</p><ul>
-<li>::startAccel(ICM42670_ACCEL_ODR_DEFAULT, ICM42670_ACCEL_FSR_DEFAULT)</li>
-<li>::startGyro (ICM42670_GYRO_ODR_DEFAULT, ICM42670_GYRO_FSR_DEFAULT)</li>
+<li>::startAccel(<a class="el" href="group___macros.html#ga146f26b8804073ca0ec852c0a6b8a873" title="ICM42670_ACCEL_ODR_DEFAULT">ICM42670_ACCEL_ODR_DEFAULT</a>, <a class="el" href="group___macros.html#ga51628454e4633200147136b812075518" title="ICM42670_ACCEL_FSR_DEFAULT">ICM42670_ACCEL_FSR_DEFAULT</a>)</li>
+<li>::startGyro (<a class="el" href="group___macros.html#ga776be99f7a0d33b09645d2d94a5a7e18" title="ICM42670_GYRO_ODR_DEFAULT">ICM42670_GYRO_ODR_DEFAULT</a>, <a class="el" href="group___macros.html#ga8c1fff6558ecdb8c1eb731bc76e99438" title="ICM42670_GYRO_FSR_DEFAULT">ICM42670_GYRO_FSR_DEFAULT</a>)</li>
 <li>::enableAccelGyroLnMode()</li>
 </ul>
 <dl class="section pre"><dt>Precondition</dt><dd>Call ::begin() successfully before this function.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8cpp_source.html#l00221">221</a> of file <a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="_i_c_m42670_8cpp_source.html#l00214">enableAccelGyroLnMode()</a>, <a class="el" href="_i_c_m42670_8cpp_source.html#l00123">startAccel()</a>, and <a class="el" href="_i_c_m42670_8cpp_source.html#l00169">startGyro()</a>.</p>
-
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="_i_c_m42670_8h_source.html">ICM42670.h</a></li>
-<li>src/<a class="el" href="_i_c_m42670_8cpp_source.html">ICM42670.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

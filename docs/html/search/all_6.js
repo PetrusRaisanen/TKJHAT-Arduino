@@ -1,6 +1,18 @@
 var searchData=
 [
-  ['i2c_5fi_0',['i2c_i',['../structssd1306__t.html#a445e0fb84b103da5b6414be70ea627ad',1,'ssd1306_t']]],
-  ['icm42670_1',['ICM42670',['../class_i_c_m42670.html',1,'ICM42670'],['../class_i_c_m42670.html#af416a4e9826bed48968c29717003e624',1,'ICM42670::ICM42670()']]],
-  ['ispressed_2',['isPressed',['../class_button.html#a143f0a274b03d2bede8a84e37cd43dc7',1,'Button']]]
+  ['hdc2021_0',['hdc2021',['../class_t_k_j_h_a_t.html#a149281f91567b92137939fd57a376691',1,'TKJHAT']]],
+  ['hdc2021_5fconfig_1',['HDC2021_CONFIG',['../group___macros.html#ga19a5847cf6cb2be202be9f05c0cc0123',1,'pins.h']]],
+  ['hdc2021_5fhumid_5fthr_5fh_2',['HDC2021_HUMID_THR_H',['../group___macros.html#gab1a1243ac974a7f079073c4a76d02ba0',1,'pins.h']]],
+  ['hdc2021_5fhumid_5fthr_5fl_3',['HDC2021_HUMID_THR_L',['../group___macros.html#ga365184fd579b3dec89fcbef2d443d691',1,'pins.h']]],
+  ['hdc2021_5fhumidity_5fhigh_4',['HDC2021_HUMIDITY_HIGH',['../group___macros.html#ga89a9d963942b130b6b88d378b86d3d43',1,'pins.h']]],
+  ['hdc2021_5fhumidity_5flow_5',['HDC2021_HUMIDITY_LOW',['../group___macros.html#gaf1a8ce65d1d1a7bea5b2f47ee65e4704',1,'pins.h']]],
+  ['hdc2021_5fi2c_5faddress_6',['HDC2021_I2C_ADDRESS',['../group___macros.html#gad759ab61dc1ec115b86cf6034da01ed6',1,'pins.h']]],
+  ['hdc2021_5finterrupt_7',['HDC2021_INTERRUPT',['../group__board__pins.html#gae71095f21dda887f8ba252673785cefd',1,'HDC2021_INTERRUPT:&#160;pins.h'],['../group__board__pins.html#gad2e8147c4eae00ed44dbc6942f058721',1,'HDC2021_INTERRUPT:&#160;pins.h']]],
+  ['hdc2021_5fmeasurement_5fconfig_8',['HDC2021_MEASUREMENT_CONFIG',['../group___macros.html#gaf2fe833f18bc8e6cdd58cce8033eb844',1,'pins.h']]],
+  ['hdc2021_5ftemp_5fhigh_9',['HDC2021_TEMP_HIGH',['../group___macros.html#gab8e3850c51304256ac9953a71f1a39fa',1,'pins.h']]],
+  ['hdc2021_5ftemp_5flow_10',['HDC2021_TEMP_LOW',['../group___macros.html#gad92db671e1e90a52210b32348f8e1173',1,'pins.h']]],
+  ['hdc2021_5ftemp_5fthr_5fh_11',['HDC2021_TEMP_THR_H',['../group___macros.html#gafc9ddfbc298d8fd6224952ae2f7ec7f4',1,'pins.h']]],
+  ['hdc2021_5ftemp_5fthr_5fl_12',['HDC2021_TEMP_THR_L',['../group___macros.html#ga65304734a6596bd8dde54338c78f0cc7',1,'pins.h']]],
+  ['height_13',['height',['../structssd1306__t.html#a966cf732ff8115ad6970853bdfed44a5',1,'ssd1306_t']]],
+  ['hspan_14',['hspan',['../class_display.html#a90b65e20981f7534641c215a7ab06aef',1,'Display']]]
 ];

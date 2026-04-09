@@ -9,5 +9,6 @@ var class_display =
     [ "hspan", "class_display.html#a90b65e20981f7534641c215a7ab06aef", null ],
     [ "putp", "class_display.html#ac09083a67bec90197c3067ff174e0ed2", null ],
     [ "stopDisplay", "class_display.html#a7703f27b71b8203d57d55460ba83d875", null ],
-    [ "writeText", "class_display.html#a2fa1ad3b5f80109ffd7d56422dc6e1a5", null ]
+    [ "writeText", "class_display.html#a210b7277558ab183b54b7a49a1feffbc", null ],
+    [ "writeTextPositioned", "class_display.html#a2b0fc8a9370e044277c14bbcf1cb343e", null ]
 ];

@@ -1,7 +1,19 @@
-// This code is an example of how to use the RGBLed class
+/*
+  RGB LED Example
+
+  This example demonstrates how to use the RGB LED on the TKJHAT. 
+  The RGB LED can be controlled by setting the intensity of the red, green, and blue components.
+
+  Circuit:
+  - RGB LED integrated in Pico HAT
+
+  created 2026
+ */
+
 #include "TKJHAT.h"
 
-TKJHAT hat; // Create an instance of the TKJHAT class to access the RGB LED
+// Create an instance of the TKJHAT class
+TKJHAT hat; 
 
 
 // RGBLed.begin() initializes the RGB LED, and RGBLed.write() sets the color of the LED

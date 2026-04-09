@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arduino TKJHAT: Main Page</title>
+<title>Arduino TKJHAT: TKJHAT Arduino Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -102,10 +102,54 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Arduino TKJHAT Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> Arduino Library </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>Library for the Pico HAT extension board for the Raspberry Pi Pico W.</p>
+<p>This library provides access to onboard components such as buttons, LEDs, sensors, display, and buzzer using Arduino-style APIs.</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Basic Usage</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_t_k_j_h_a_t_8h.html">TKJHAT.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_t_k_j_h_a_t.html">TKJHAT</a> hat;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> setup() {</div>
+<div class="line">    <span class="comment">// example code</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> loop() {</div>
+<div class="line">    <span class="comment">//...</span></div>
+<div class="line">}</div>
+<div class="ttc" id="a_t_k_j_h_a_t_8h_html"><div class="ttname"><a href="_t_k_j_h_a_t_8h.html">TKJHAT.h</a></div><div class="ttdoc">Main interface for the TKJHAT board.</div></div>
+<div class="ttc" id="aclass_t_k_j_h_a_t_html"><div class="ttname"><a href="class_t_k_j_h_a_t.html">TKJHAT</a></div><div class="ttdoc">Main interface for accessing TKJHAT board features.</div><div class="ttdef"><b>Definition</b> <a href="_t_k_j_h_a_t_8h_source.html#l00045">TKJHAT.h:45</a></div></div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Components</h1>
+<p>The following components are available on the board:</p>
+<ul>
+<li><a class="el" href="class_button.html" title="Represents a push button connected to a GPIO pin.">Button</a>: <span class="tt">button1</span>, <span class="tt">button2</span></li>
+<li><a class="el" href="class_led.html" title="A class to control an LED.">Led</a>: <span class="tt">led</span></li>
+<li>RGBLed: <span class="tt">rgbLed</span></li>
+<li><a class="el" href="class_buzzer.html" title="A class to control a buzzer.">Buzzer</a>: <span class="tt">buzzer</span></li>
+<li><a class="el" href="class_display.html" title="API for the SSD1306 OLED display, uses the ssd1306 library for low-level operations Datasheet can be ...">Display</a> (SSD1306): <span class="tt">display</span></li>
+<li>Lightsensor: <span class="tt">lightSensor</span></li>
+<li><a class="el" href="class_i_c_m42670.html" title="API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. Datasheet can be found at: htt...">ICM42670</a> (IMU): <span class="tt">icm42670</span></li>
+<li>Temperature and humidity sensor (HDC2021): <span class="tt">hdc2021</span></li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Getting Started</h1>
+<p>Try these example sketches:</p>
+<ul>
+<li><b><a class="el" href="class_button.html" title="Represents a push button connected to a GPIO pin.">Button</a></b> → <span class="tt"><a class="el" href="_button_8ino_source.html">examples/Button/Button.ino</a></span></li>
+<li><b><a class="el" href="class_led.html" title="A class to control an LED.">Led</a></b> → <span class="tt"><a class="el" href="_led_8ino_source.html">examples/Led/Led.ino</a></span></li>
+<li><b><a class="el" href="class_display.html" title="API for the SSD1306 OLED display, uses the ssd1306 library for low-level operations Datasheet can be ...">Display</a></b> → <span class="tt"><a class="el" href="_display_8ino_source.html">examples/Display/Display.ino</a></span></li>
+<li><b><a class="el" href="class_buzzer.html" title="A class to control a buzzer.">Buzzer</a></b> → <span class="tt"><a class="el" href="_buzzer_8ino_source.html">examples/Buzzer/Buzzer.ino</a></span> </li>
+</ul>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

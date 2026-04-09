@@ -11,8 +11,6 @@ RECURSIVE              = YES
 
 FILE_PATTERNS          = *.h \
                          *.hpp \
-                         *.c \
-                         *.cpp \
                          *.ino \
                          *.md
 

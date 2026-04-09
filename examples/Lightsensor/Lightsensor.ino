@@ -1,6 +1,18 @@
+/*
+  Light Sensor Example
+
+  This example demonstrates how to use the LightSensor class from the TKJHAT library to read light intensity values and print them to the Serial Monitor.
+
+  Circuit:
+  - Light sensor integrated in Pico HAT
+
+  created 2026
+*/
+
 #include "TKJHAT.h"
 
-TKJHAT hat; // Create an instance of the TKJHAT class
+// Create an instance of the TKJHAT class
+TKJHAT hat; 
 
 // Initialize the light sensor and set up serial communication
 void setup() {

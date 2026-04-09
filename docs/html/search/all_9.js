@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pages_0',['pages',['../structssd1306__t.html#a1c182da834a4e266af77684a66b6e0b8',1,'ssd1306_t']]],
-  ['playtone_1',['playTone',['../class_buzzer.html#a8d1f40a804a0cf49d7c6f4f6d9412f22',1,'Buzzer']]],
-  ['putp_2',['putp',['../class_display.html#ac09083a67bec90197c3067ff174e0ed2',1,'Display']]]
+  ['macros_20including_20addresses_20and_20registers_20of_20peripherals_0',['Macros including addresses and registers of peripherals',['../group___macros.html',1,'']]],
+  ['mems_5fbuffer_5fsize_1',['MEMS_BUFFER_SIZE',['../group___macros.html#ga2095dd3d93bc1bee7e0834cecb8917ff',1,'pins.h']]],
+  ['mems_5fsampling_5ffrequency_2',['MEMS_SAMPLING_FREQUENCY',['../group___macros.html#ga7b26f8de80a11555b244e51ecda60e6f',1,'pins.h']]]
 ];

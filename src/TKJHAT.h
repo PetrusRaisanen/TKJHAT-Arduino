@@ -1,3 +1,13 @@
+/**
+ * @file TKJHAT.h
+ * @brief Main interface for the TKJHAT board
+ *
+ * This class provides access to all peripherals available on the TKJHAT
+ * extension board. Each component is exposed as a public member object.
+ *
+ * All peripherals must be initialized by calling hat.begin() in setup().
+ */
+
 #ifndef TKJHAT_H
 #define TKJHAT_H
 
@@ -14,27 +24,62 @@
 
 /**
  * @class TKJHAT
- * @brief Arduino-style interface for the TKJHAT board.
+ * @brief Main interface for accessing TKJHAT board features.
+ *
+ * Example:
+ * @code
+ * TKJHAT hat;
+ *
+ * void setup() {
+ *   hat.begin();
+ * }
+ *
+ * void loop() {
+ *   if (hat.button1.isPressed()) {
+ *     hat.led.on();
+ *   }
+ * }
+ * @endcode
  */
+
 class TKJHAT {
 public:
+    /** @brief Button 1 on the board */
     Button button1;
+
+    /** @brief Button 2 on the board */
     Button button2;
+
+    /** @brief Onboard LED */
     Led led;
+
+    /** @brief Buzzer output */
     Buzzer buzzer;
+
+    /** @brief Display module */
     Display display;
+
+    /** @brief RGB LED */
     RGBLed rgbLed;
-    ICM42670 icm42670;    
+
+    /** @brief IMU sensor (accelerometer + gyroscope) */
+    ICM42670 icm42670;
+
+    /** @brief Ambient light sensor */
     LightSensor lightSensor;
+
+    /** @brief Temperature and humidity sensor */
     HDC2021 hdc2021;
 
     /**
-     * @brief Construct a new TKJHAT object.
+     * @brief Construct a new TKJHAT object
      */
     TKJHAT();
 
     /**
-     * @brief Initialize the board peripherals.
+     * @brief Initialize all board peripherals
+     *
+     * Must be called in setup() before using any components.
      */
     void begin();
 };

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['external_5fvcc_0',['external_vcc',['../structssd1306__t.html#a6a21df12c17f2611931c25121dae3df8',1,'ssd1306_t']]]
+  ['display_0',['display',['../class_t_k_j_h_a_t.html#a486beb09ec63fbdd1dbf1d907337479b',1,'TKJHAT']]]
 ];

@@ -1,7 +1,19 @@
-// This is an example code for using the HDC2021 sensor with an Arduino.
+/*
+  HDC2021 Example
+
+  This example demonstrates how to use the HDC2021 temperature and humidity sensor with the TKJHAT library. 
+  It initializes the sensor, reads temperature and humidity values, and prints them to the Serial Monitor every second.
+
+  Circuit:
+  - HDC2021 sensor integrated in Pico HAT
+
+  created 2026
+ */
+
 #include "TKJHAT.h"
 
-TKJHAT hat; // Create an instance of the TKJHAT class to access the HDC2021 sensor
+// Create an instance of the TKJHAT class
+TKJHAT hat; 
 
 // Initializes serial communication and the HDC2021 sensor
 void setup() {
