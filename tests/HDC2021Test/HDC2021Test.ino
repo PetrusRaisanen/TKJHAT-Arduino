@@ -27,9 +27,12 @@ void test_begin() {
   test("begin()", true);
 }
 
-//
+// This test checks that stop() can be called without errors
 void test_stop() {
-
+    Serial.println("Running stop()");
+    hat.hdc2021.stop();
+    delay(100);
+    test("stop()", true);
 }
 
 
