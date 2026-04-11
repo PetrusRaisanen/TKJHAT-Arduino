@@ -107,7 +107,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>API for the SSD1306 OLED display, uses the ssd1306 library for low-level operations Datasheet can be found at: <a href="https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf">https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf</a> Library used can be found at: <a href="https://github.com/daschr/pico-ssd1306https://github.com/daschr/pico-ssd1306">https://github.com/daschr/pico-ssd1306https://github.com/daschr/pico-ssd1306</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure.  
+<p>C++ class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_display_8h_source.html">Display.h</a>&gt;</code></p>
@@ -122,17 +122,13 @@ void&#160;</td><td class="memItemRight"><b>clear</b> ()</td></tr>
 <tr class="memdesc:a14242933dd00fc1d50f9ae70d5121d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the display. <br /></td></tr>
 <tr class="memitem:ae972fffea6f7ca1d627ef48c3d841bb3" id="r_ae972fffea6f7ca1d627ef48c3d841bb3"><td class="memItemLeft"><a id="ae972fffea6f7ca1d627ef48c3d841bb3" name="ae972fffea6f7ca1d627ef48c3d841bb3"></a>
 &#160;</td><td class="memItemRight"><b>Display</b> ()</td></tr>
-<tr class="memdesc:ae972fffea6f7ca1d627ef48c3d841bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_display.html" title="API for the SSD1306 OLED display, uses the ssd1306 library for low-level operations Datasheet can be ...">Display</a> object. <br /></td></tr>
+<tr class="memdesc:ae972fffea6f7ca1d627ef48c3d841bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_display.html" title="C++ class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations.">Display</a> object. <br /></td></tr>
 <tr class="memitem:a92f9c3d027a419cda337b3163d35915a" id="r_a92f9c3d027a419cda337b3163d35915a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a92f9c3d027a419cda337b3163d35915a">drawCircle</a> (int16_t x0, int16_t y0, int16_t r, bool fill)</td></tr>
 <tr class="memdesc:a92f9c3d027a419cda337b3163d35915a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a circle.  <br /></td></tr>
 <tr class="memitem:a91752c409fcc4eb5842647a9ca7bbb05" id="r_a91752c409fcc4eb5842647a9ca7bbb05"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a91752c409fcc4eb5842647a9ca7bbb05">drawLine</a> (int16_t x0, int16_t y0, int16_t x1, int16_t y1)</td></tr>
 <tr class="memdesc:a91752c409fcc4eb5842647a9ca7bbb05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line between two points.  <br /></td></tr>
 <tr class="memitem:a88b0733ef286f658afc314eef6534ea0" id="r_a88b0733ef286f658afc314eef6534ea0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88b0733ef286f658afc314eef6534ea0">drawSquare</a> (uint32_t x, uint32_t y, uint32_t w, uint32_t h, bool fill)</td></tr>
 <tr class="memdesc:a88b0733ef286f658afc314eef6534ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a square.  <br /></td></tr>
-<tr class="memitem:a90b65e20981f7534641c215a7ab06aef" id="r_a90b65e20981f7534641c215a7ab06aef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90b65e20981f7534641c215a7ab06aef">hspan</a> (int16_t x0, int16_t x1, int16_t y)</td></tr>
-<tr class="memdesc:a90b65e20981f7534641c215a7ab06aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a horizontal span.  <br /></td></tr>
-<tr class="memitem:ac09083a67bec90197c3067ff174e0ed2" id="r_ac09083a67bec90197c3067ff174e0ed2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac09083a67bec90197c3067ff174e0ed2">putp</a> (int16_t x, int16_t y)</td></tr>
-<tr class="memdesc:ac09083a67bec90197c3067ff174e0ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put a pixel on the display.  <br /></td></tr>
 <tr class="memitem:a7703f27b71b8203d57d55460ba83d875" id="r_a7703f27b71b8203d57d55460ba83d875"><td class="memItemLeft"><a id="a7703f27b71b8203d57d55460ba83d875" name="a7703f27b71b8203d57d55460ba83d875"></a>
 void&#160;</td><td class="memItemRight"><b>stopDisplay</b> ()</td></tr>
 <tr class="memdesc:a7703f27b71b8203d57d55460ba83d875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the display (power off). <br /></td></tr>
@@ -142,10 +138,24 @@ void&#160;</td><td class="memItemRight"><b>stopDisplay</b> ()</td></tr>
 <tr class="memdesc:a2b0fc8a9370e044277c14bbcf1cb343e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write text to the display with a specified scale and position.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>API for the SSD1306 OLED display, uses the ssd1306 library for low-level operations Datasheet can be found at: <a href="https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf">https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf</a> Library used can be found at: <a href="https://github.com/daschr/pico-ssd1306https://github.com/daschr/pico-ssd1306">https://github.com/daschr/pico-ssd1306https://github.com/daschr/pico-ssd1306</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure. </p>
-<p>A class to control the SSD1306 OLED display </p>
+<div class="textblock"><p>C++ class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations. </p>
+<p><a class="el" href="class_display.html" title="C++ class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations.">Display</a> is connected to the I2C bus using address <a class="el" href="group___macros.html#ga9d56e6a29f4466486e8cb7d975a19bf0" title="SSD1306_I2C_ADDRESS">SSD1306_I2C_ADDRESS</a> (0x3C). Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure.</p>
+<p>Default connections: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Signal  </th><th class="markdownTableHeadNone">I2C Macro  </th><th class="markdownTableHeadNone">GPIO  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SDA  </td><td class="markdownTableBodyNone"><a class="el" href="group__board__pins.html#ga127d6a53d02af7b9e7a18e4ce8c54102" title="DEFAULT_I2C_SDA_PIN">DEFAULT_I2C_SDA_PIN</a>  </td><td class="markdownTableBodyNone">12  </td><td class="markdownTableBodyNone">I2C data  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SCL  </td><td class="markdownTableBodyNone"><a class="el" href="group__board__pins.html#gaf14bdc7f44bd97e90f662b4d46772158" title="DEFAULT_I2C_SCL_PIN">DEFAULT_I2C_SCL_PIN</a>  </td><td class="markdownTableBodyNone">13  </td><td class="markdownTableBodyNone">I2C clock  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Address  </td><td class="markdownTableBodyNone"><a class="el" href="group___macros.html#ga9d56e6a29f4466486e8cb7d975a19bf0" title="SSD1306_I2C_ADDRESS">SSD1306_I2C_ADDRESS</a>  </td><td class="markdownTableBodyNone">0x3C  </td><td class="markdownTableBodyNone">OLED I2C address  </td></tr>
+</table>
+<dl class="section pre"><dt>Precondition</dt><dd>The I2C interface must be initialized (use <a class="el" href="class_t_k_j_h_a_t.html#a7d1c98c15473cb3c15c3b2f6e5e81d04" title="TKJHAT::begin()">TKJHAT::begin()</a>).</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>SSD1306 datasheet: <a href="https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf">https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf</a> </dd>
+<dd>
+pico-ssd1306 library used: <a href="https://github.com/daschr/pico-ssd1306">https://github.com/daschr/pico-ssd1306</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_display_8h_source.html#l00022">22</a> of file <a class="el" href="_display_8h_source.html">Display.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8h_source.html#l00034">34</a> of file <a class="el" href="_display_8h_source.html">Display.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a92f9c3d027a419cda337b3163d35915a" name="a92f9c3d027a419cda337b3163d35915a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92f9c3d027a419cda337b3163d35915a">&#9670;&#160;</a></span>drawCircle()</h2>
@@ -279,72 +289,6 @@ void&#160;</td><td class="memItemRight"><b>stopDisplay</b> ()</td></tr>
 
 </div>
 </div>
-<a id="a90b65e20981f7534641c215a7ab06aef" name="a90b65e20981f7534641c215a7ab06aef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90b65e20981f7534641c215a7ab06aef">&#9670;&#160;</a></span>hspan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Display::hspan </td>
-          <td>(</td>
-          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>x0</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>x1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw a horizontal span. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x0</td><td>The x-coordinate of the first point </td></tr>
-    <tr><td class="paramname">x1</td><td>The x-coordinate of the second point </td></tr>
-    <tr><td class="paramname">y</td><td>The y-coordinate of the line </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac09083a67bec90197c3067ff174e0ed2" name="ac09083a67bec90197c3067ff174e0ed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac09083a67bec90197c3067ff174e0ed2">&#9670;&#160;</a></span>putp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Display::putp </td>
-          <td>(</td>
-          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Put a pixel on the display. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>The x-coordinate of the pixel </td></tr>
-    <tr><td class="paramname">y</td><td>The y-coordinate of the pixel </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a210b7277558ab183b54b7a49a1feffbc" name="a210b7277558ab183b54b7a49a1feffbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a210b7277558ab183b54b7a49a1feffbc">&#9670;&#160;</a></span>writeText()</h2>
 
@@ -403,9 +347,9 @@ void&#160;</td><td class="memItemRight"><b>stopDisplay</b> ()</td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text to display </td></tr>
-    <tr><td class="paramname">scale</td><td>The scale of the text (default is 1) </td></tr>
     <tr><td class="paramname">x</td><td>The x-coordinate of the text </td></tr>
     <tr><td class="paramname">y</td><td>The y-coordinate of the text </td></tr>
+    <tr><td class="paramname">scale</td><td>Optional, change the scale of text (default is 1) </td></tr>
   </table>
   </dd>
 </dl>

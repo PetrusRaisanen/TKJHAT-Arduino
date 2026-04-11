@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['playtone_0',['playTone',['../class_buzzer.html#a8d1f40a804a0cf49d7c6f4f6d9412f22',1,'Buzzer']]],
-  ['putp_1',['putp',['../class_display.html#ac09083a67bec90197c3067ff174e0ed2',1,'Display']]]
+  ['readsensordata_0',['readSensorData',['../class_i_c_m42670.html#a8a2c99e8af1220d355e89b64ad1d0b2f',1,'ICM42670']]],
+  ['reset_1',['reset',['../class_i_c_m42670.html#ad4fcdc3d00e12ce7a1e5d0d9ed9ad8ac',1,'ICM42670']]]
 ];

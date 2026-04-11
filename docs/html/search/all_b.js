@@ -5,6 +5,5 @@ var searchData=
   ['pdm_5fdata_2',['PDM_DATA',['../group__board__pins.html#gac7e454290df095a19ff4c9b359c31075',1,'pins.h']]],
   ['peripherals_3',['Macros including addresses and registers of peripherals',['../group___macros.html',1,'']]],
   ['pin_20definitions_4',['Board and pin definitions',['../group__board__pins.html',1,'']]],
-  ['playtone_5',['playTone',['../class_buzzer.html#a8d1f40a804a0cf49d7c6f4f6d9412f22',1,'Buzzer']]],
-  ['putp_6',['putp',['../class_display.html#ac09083a67bec90197c3067ff174e0ed2',1,'Display']]]
+  ['playtone_5',['playTone',['../class_buzzer.html#a8d1f40a804a0cf49d7c6f4f6d9412f22',1,'Buzzer']]]
 ];

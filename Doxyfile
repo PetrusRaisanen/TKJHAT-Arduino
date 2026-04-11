@@ -6,7 +6,7 @@ CREATE_SUBDIRS         = NO
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 GENERATE_LATEX         = NO
-INPUT                  = src examples README.md library.properties
+INPUT                  = src examples docs 
 RECURSIVE              = YES
 
 FILE_PATTERNS          = *.h \
@@ -14,7 +14,7 @@ FILE_PATTERNS          = *.h \
                          *.ino \
                          *.md
 
-USE_MDFILE_AS_MAINPAGE = README.md
+USE_MDFILE_AS_MAINPAGE = docs/index.md
 
 EXTRACT_ALL            = NO
 EXTRACT_PRIVATE        = NO
@@ -52,6 +52,7 @@ EXAMPLE_PATH           = examples
 EXAMPLE_RECURSIVE      = YES
 
 ENABLE_PREPROCESSING   = YES
+MARKDOWN_SUPPORT       = YES
 MACRO_EXPANSION        = YES
 EXPAND_ONLY_PREDEF     = YES
 

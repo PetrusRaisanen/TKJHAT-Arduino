@@ -13,6 +13,5 @@ var searchData=
   ['hdc2021_5ftemp_5flow_10',['HDC2021_TEMP_LOW',['../group___macros.html#gad92db671e1e90a52210b32348f8e1173',1,'pins.h']]],
   ['hdc2021_5ftemp_5fthr_5fh_11',['HDC2021_TEMP_THR_H',['../group___macros.html#gafc9ddfbc298d8fd6224952ae2f7ec7f4',1,'pins.h']]],
   ['hdc2021_5ftemp_5fthr_5fl_12',['HDC2021_TEMP_THR_L',['../group___macros.html#ga65304734a6596bd8dde54338c78f0cc7',1,'pins.h']]],
-  ['height_13',['height',['../structssd1306__t.html#a966cf732ff8115ad6970853bdfed44a5',1,'ssd1306_t']]],
-  ['hspan_14',['hspan',['../class_display.html#a90b65e20981f7534641c215a7ab06aef',1,'Display']]]
+  ['height_13',['height',['../structssd1306__t.html#a966cf732ff8115ad6970853bdfed44a5',1,'ssd1306_t']]]
 ];

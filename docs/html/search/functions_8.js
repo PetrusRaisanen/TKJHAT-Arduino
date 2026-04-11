@@ -1,6 +1,28 @@
 var searchData=
 [
-  ['readsensordata_0',['readSensorData',['../class_i_c_m42670.html#a8a2c99e8af1220d355e89b64ad1d0b2f',1,'ICM42670']]],
-  ['readwhoami_1',['readWhoAmI',['../class_i_c_m42670.html#a33908302f5af30350c1e7a399fc68e75',1,'ICM42670']]],
-  ['reset_2',['reset',['../class_i_c_m42670.html#ad4fcdc3d00e12ce7a1e5d0d9ed9ad8ac',1,'ICM42670']]]
+  ['set_0',['set',['../class_led.html#aeff356c09b559f575bc91f109f033b28',1,'Led']]],
+  ['ssd1306_5fbmp_5fshow_5fimage_1',['ssd1306_bmp_show_image',['../ssd1306_8h.html#a89d1f4edb34d5860df01a62512cc3949',1,'ssd1306.h']]],
+  ['ssd1306_5fbmp_5fshow_5fimage_5fwith_5foffset_2',['ssd1306_bmp_show_image_with_offset',['../ssd1306_8h.html#a1624a5ea20392d5614b84094e94160b0',1,'ssd1306.h']]],
+  ['ssd1306_5fclear_3',['ssd1306_clear',['../ssd1306_8h.html#a82fc78675d097e37985dfa8c6672dd58',1,'ssd1306.h']]],
+  ['ssd1306_5fclear_5fpixel_4',['ssd1306_clear_pixel',['../ssd1306_8h.html#ac328fa69f7ed547cb1cd62f9e65e8067',1,'ssd1306.h']]],
+  ['ssd1306_5fclear_5fsquare_5',['ssd1306_clear_square',['../ssd1306_8h.html#abe48d45d9ddeee6d86624f2d98e6fa99',1,'ssd1306.h']]],
+  ['ssd1306_5fcontrast_6',['ssd1306_contrast',['../ssd1306_8h.html#a9ebe6c7807f3fd8f0eb006769bedbbac',1,'ssd1306.h']]],
+  ['ssd1306_5fdeinit_7',['ssd1306_deinit',['../ssd1306_8h.html#a8d7146d350e392ebc2556280d0fde1ca',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fchar_8',['ssd1306_draw_char',['../ssd1306_8h.html#a6de844e85019c62e2b094e5598bd18df',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fchar_5fwith_5ffont_9',['ssd1306_draw_char_with_font',['../ssd1306_8h.html#a48309e637d7621f73446b37d8728e085',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fempty_5fsquare_10',['ssd1306_draw_empty_square',['../ssd1306_8h.html#a4e33dec03c4741e2771987b20f026ebf',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fline_11',['ssd1306_draw_line',['../ssd1306_8h.html#a61855e5afa6908a4abda2336dfc6cefc',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fpixel_12',['ssd1306_draw_pixel',['../ssd1306_8h.html#a7c875fba9869eaa52e27cf325da57147',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fsquare_13',['ssd1306_draw_square',['../ssd1306_8h.html#a77731d3dfec84511f7b1b8205cc764c3',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fstring_14',['ssd1306_draw_string',['../ssd1306_8h.html#a4fa45ef8fd75cb3ff1b1c2378d064266',1,'ssd1306.h']]],
+  ['ssd1306_5fdraw_5fstring_5fwith_5ffont_15',['ssd1306_draw_string_with_font',['../ssd1306_8h.html#ad7aa75a6430ec1c501d233b3aaeafd8d',1,'ssd1306.h']]],
+  ['ssd1306_5finit_16',['ssd1306_init',['../ssd1306_8h.html#a56995249d6623b978ed8e943b4f156be',1,'ssd1306.h']]],
+  ['ssd1306_5finvert_17',['ssd1306_invert',['../ssd1306_8h.html#a2332fdd392f3e002a5f50e3c204c0e6a',1,'ssd1306.h']]],
+  ['ssd1306_5fpoweroff_18',['ssd1306_poweroff',['../ssd1306_8h.html#ab6b0fb58a6636463ec76c93c05e26e02',1,'ssd1306.h']]],
+  ['ssd1306_5fpoweron_19',['ssd1306_poweron',['../ssd1306_8h.html#a19eee3288fe5dc84fc95ff3a24d50d6a',1,'ssd1306.h']]],
+  ['ssd1306_5fshow_20',['ssd1306_show',['../ssd1306_8h.html#afc04cfe30a15dfd3cc0b55ae2a2f57af',1,'ssd1306.h']]],
+  ['startaccel_21',['startAccel',['../class_i_c_m42670.html#a21f753056f0ad44d71d023f7d3c0e1b1',1,'ICM42670']]],
+  ['startgyro_22',['startGyro',['../class_i_c_m42670.html#a5bda01bfb6eb304f1e932553b2531d02',1,'ICM42670']]],
+  ['startwithdefaultvalues_23',['startWithDefaultValues',['../class_i_c_m42670.html#aeef53dfcc5a8533c3bd3c0f184c0fe3a',1,'ICM42670']]],
+  ['stopdisplay_24',['stopDisplay',['../class_display.html#a7703f27b71b8203d57d55460ba83d875',1,'Display']]]
 ];

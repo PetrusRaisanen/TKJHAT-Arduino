@@ -4,10 +4,26 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-/** @brief API for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.
+/** 
+ * @brief C++ class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.
+ * @details
  * Datasheet can be found at: https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf
  * Functions are based on TKJHAT C SDK with minimal modifications to fit Arduino style and the class structure.
  * 
+ * The IMU is connected on I2C at @ref ICM42670_I2C_ADDRESS (0x69).
+ *
+ * **Recommended defaults**
+ * - Accelerometer: ±@ref ICM42670_ACCEL_FSR_DEFAULT g at @ref ICM42670_ACCEL_ODR_DEFAULT Hz  
+ *   (typically: ±4 g @ 100 Hz)
+ * - Gyroscope:    ±@ref ICM42670_GYRO_FSR_DEFAULT dps at @ref ICM42670_GYRO_ODR_DEFAULT Hz  
+ *   (typically: ±250 dps @ 100 Hz)
+ *
+ * **Modes**
+ * - This SDK supports Low-Noise (LN) mode (higher precision, higher power).
+ * - Other modes (LP/ULP/hybrid) are not implemented in this SDK.
+ *
+ * @pre The I2C interface must be initialized (use @ref init_i2c_default() or @ref init_hat_sdk()).
+ * {@
  */
 
 class ICM42670 {
@@ -28,12 +44,6 @@ public:
      */
     bool begin();
 
-    /** @brief Detect the I2C address of the IMU
-     * 
-     * This is a helper function to handle the case where the AD0 pin is floating, which can cause the address to be either 0x68 or 0x69. It tries both addresses and checks for the correct WHO_AM_I response.
-     * 
-     * @return true if the address was successfully detected, false otherwise.
-     */
     bool detectAddress();
 
     /** @brief Perform a soft reset of the IMU
@@ -44,12 +54,6 @@ public:
      */
     bool reset();
 
-    /** @brief Read the WHO_AM_I register to verify device identity
-     * 
-     * @param who Reference to a variable where the WHO_AM_I value will be stored.
-     * 
-     * @return true if the correct WHO_AM_I response was received, false otherwise.
-     */
     bool readWhoAmI(uint8_t& who);
 
     // void calibrateAccel(float *dest1);
@@ -119,20 +123,15 @@ private:
     float aRes;
     float gRes;
 
-    /** @brief Helper functions for I2C communication
-    * These functions abstract the I2C read/write operations to the device registers.
-     * 
-     * @param reg Register address to read from or write to.
-     * @param value Value to write (for writeByte) or reference to store read value (for readByte).
-     * @param buffer Buffer to store multiple bytes for readBytes.
-     * @param len Number of bytes to read for readBytes.
-     * 
-     * @return true on success, false on error.
-    * 
-    */
     bool readByte(uint8_t reg, uint8_t& value);
     bool readBytes(uint8_t reg, uint8_t* buffer, size_t len);
     bool writeByte(uint8_t reg, uint8_t value);
 };
+
+/**
+ * @example ICM42670.ino
+ * 
+ * @}
+ */
 
 #endif

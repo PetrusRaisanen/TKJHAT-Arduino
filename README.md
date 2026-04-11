@@ -2,25 +2,7 @@
 
 Library for the Pico HAT extension board for the Raspberry Pi Pico W.
 
-This library provides access to onboard components such as buttons, LEDs, sensors, display, and buzzer using Arduino-style APIs.
-
----
-
-## Basic Usage
-
-```cpp
-#include "TKJHAT.h"
-
-TKJHAT hat;
-
-void setup() {
-    // example code
-}
-
-void loop() {
-    //...
-}
-```
+This library provides access to onboard components including buttons, LEDs, sensors, display, and buzzer using Arduino-style APIs.
 
 ---
 
@@ -38,12 +20,3 @@ The following components are available on the board:
 - Temperature and humidity sensor (HDC2021): `hdc2021`
 
 ---
-
-## Getting Started
-
-Try these example sketches:
-
-- **Button** → `examples/Button/Button.ino`
-- **Led** → `examples/Led/Led.ino`
-- **Display** → `examples/Display/Display.ino`
-- **Buzzer** → `examples/Buzzer/Buzzer.ino`

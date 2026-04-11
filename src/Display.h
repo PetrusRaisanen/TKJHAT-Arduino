@@ -4,20 +4,32 @@
 #include <Arduino.h>
 
 /**
- * @brief API for the SSD1306 OLED display, uses the ssd1306 library for low-level operations
- * Datasheet can be found at: https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
- * Library used can be found at: https://github.com/daschr/pico-ssd1306https://github.com/daschr/pico-ssd1306
+ * @brief C++ class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations
+ * @details
+ * Display is connected to the I2C bus using address @ref SSD1306_I2C_ADDRESS (0x3C).
  * Functions are based on TKJHAT C SDK with minimal modifications to fit Arduino style and the class structure.
  * 
+ * Default connections:
+ * | Signal | I2C Macro | GPIO | Description |
+ * |---------|-----------|------|-------------|
+ * | SDA | @ref DEFAULT_I2C_SDA_PIN | 12 | I2C data |
+ * | SCL | @ref DEFAULT_I2C_SCL_PIN | 13 | I2C clock |
+ * | Address | @ref SSD1306_I2C_ADDRESS | 0x3C | OLED I2C address |
+ *
+ * @pre The I2C interface must be initialized (use @ref TKJHAT::begin()).
+ * 
+ * @see SSD1306 datasheet: https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
+ * @see pico-ssd1306 library used: https://github.com/daschr/pico-ssd1306
+ * 
+ * @{
+ *
  */
+
+
 
 extern "C" {    // Including C headers in a C++ file requires extern "C"
 #include "display/ssd1306.h"
 }
-
-/** @brief A class to control the SSD1306 OLED display 
- * 
-*/
 
 class Display {
 
@@ -39,31 +51,22 @@ public:
     /** @brief Write text to the display with a scale of 2 at center (8,24)
      * 
      * @param text The text to display
+     * 
      */
     void writeText(const char* text);
 
     /** @brief Write text to the display with a specified scale and position
      * 
      * @param text The text to display
-     * @param scale The scale of the text (default is 1)
      * @param x The x-coordinate of the text
      * @param y The y-coordinate of the text
+     * @param scale Optional, change the scale of text (default is 1)
+     * 
      */
     void writeTextPositioned(int16_t x, int16_t y, const char* text, uint8_t scale = 1);
 
-    /** @brief Put a pixel on the display
-     * 
-     * @param x The x-coordinate of the pixel
-     * @param y The y-coordinate of the pixel
-     */
+    // Helper functions for drawing primitives
     void putp(int16_t x, int16_t y);
-
-    /** @brief Draw a horizontal span
-     * 
-     * @param x0 The x-coordinate of the first point
-     * @param x1 The x-coordinate of the second point
-     * @param y The y-coordinate of the line
-     */
     void hspan(int16_t x0, int16_t x1, int16_t y);
 
     /** @brief Draw a circle
@@ -72,6 +75,7 @@ public:
      * @param y0 The y-coordinate of the center
      * @param r The radius of the circle
      * @param fill Whether to fill the circle
+     * 
      */
     void drawCircle(int16_t x0, int16_t y0, int16_t r, bool fill);
 
@@ -100,8 +104,13 @@ public:
     void clear();
 
     /** @brief Stop the display (power off)
+     * 
      */
     void stopDisplay();
+
+    /** 
+     * @example Display.ino
+     * @} */
 };
 
 #endif

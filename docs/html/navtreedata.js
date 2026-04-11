@@ -43,7 +43,8 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Enumerations", "globals_enum.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 
