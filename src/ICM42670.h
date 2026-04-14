@@ -56,8 +56,8 @@ public:
 
     bool readWhoAmI(uint8_t& who);
 
-    // void calibrateAccel(float *dest1);
-    // void calibrateGyro(float *dest2);
+    void calibrateAccel(float *dest1);
+    void calibrateGyro(float *dest2);
 
     /** @brief Start the accelerometer
      * 
