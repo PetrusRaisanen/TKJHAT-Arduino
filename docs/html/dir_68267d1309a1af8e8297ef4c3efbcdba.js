@@ -1,7 +1,5 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
-    [ "display", "dir_25685f9c6d837c57f295dee081495707.html", "dir_25685f9c6d837c57f295dee081495707" ],
-    [ "microphone", "dir_b9ddf7c496a30e887d34ef274e8e63ad.html", "dir_b9ddf7c496a30e887d34ef274e8e63ad" ],
     [ "Button.h", "_button_8h.html", "_button_8h" ],
     [ "Buzzer.h", "_buzzer_8h_source.html", null ],
     [ "Display.h", "_display_8h_source.html", null ],

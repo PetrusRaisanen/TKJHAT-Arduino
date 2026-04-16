@@ -5,6 +5,5 @@ var annotated_dup =
     [ "Display", "class_display.html", "class_display" ],
     [ "ICM42670", "class_i_c_m42670.html", "class_i_c_m42670" ],
     [ "Led", "class_led.html", "class_led" ],
-    [ "ssd1306_t", "structssd1306__t.html", "structssd1306__t" ],
     [ "TKJHAT", "class_t_k_j_h_a_t.html", "class_t_k_j_h_a_t" ]
 ];
