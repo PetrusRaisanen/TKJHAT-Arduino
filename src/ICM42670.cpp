@@ -264,27 +264,34 @@ bool ICM42670::readSensorData(float& ax, float& ay, float& az,
         return true; // success
     }
 
-void ICM42670::calibrateAccel(float *dest1) {
-    uint16_t samples = 500;
+void ICM42670::calibrateAccel(float* dest1) {
+    const uint16_t samples = 500;
 
     float ax, ay, az, gx, gy, gz, t;
-    float axSum = 0, aySum = 0, azSum = 0;
+    float axSum = 0.0f, aySum = 0.0f, azSum = 0.0f;
 
     for (uint16_t i = 0; i < samples; i++) {
         readSensorData(ax, ay, az, gx, gy, gz, t);
         axSum += ax;
         aySum += ay;
-        azSum += (az - 1.0f); 
+        azSum += az;
         delay(2);
     }
 
-    dest1[0] = axSum / samples;
-    dest1[1] = aySum / samples;
-    dest1[2] = azSum / samples;
+    ax = axSum / samples;
+    ay = aySum / samples;
+    az = azSum / samples;
+
+    float magnitude = sqrt(ax * ax + ay * ay + az * az);
+    float scale = 1.0f / magnitude;
+
+    dest1[0] = ax - ax * scale;
+    dest1[1] = ay - ay * scale;
+    dest1[2] = az - az * scale;
 }
 
-void ICM42670::calibrateGyro(float *dest2) {
-    uint16_t samples = 500;
+void ICM42670::calibrateGyro(float* dest2) {
+    const uint16_t samples = 500;
 
     float ax, ay, az, gx, gy, gz, t;
     float gxSum = 0, gySum = 0, gzSum = 0;
