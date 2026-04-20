@@ -24,14 +24,14 @@ void test_led_set_off() {
 }
 
 void setup() {
-    delay(2000); 
+    delay(1000); 
     while(!Serial) {}
     UNITY_BEGIN();
 
     RUN_TEST(test_led_set_on);
-    delay(200);
+    delay(100);
     RUN_TEST(test_led_set_off);
-    delay(200);
+    delay(100);
 
     UNITY_END();
 }

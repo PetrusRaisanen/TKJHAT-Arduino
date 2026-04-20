@@ -1,30 +1,13 @@
 #include "Buzzer.h"
 
-/**
- * @brief Construct a new Buzzer object
- * @param pin GPIO pin connected to the buzzer
- */
-
 Buzzer::Buzzer(uint8_t pin) {
     this->pin = pin;
 }
-
-/**
- * @brief Initialize the buzzer pin
- * 
- * Configures the pin as OUTPUT and ensures it's off.
- */
 
 void Buzzer::begin() {
     pinMode(pin, OUTPUT);
     digitalWrite(pin, LOW); // Ensure buzzer is off
 }
-
-/**
- * @brief Play a tone on the buzzer
- * @param frequency Frequency of the tone in Hz
- * @param duration Duration of the tone in milliseconds
- */
 
 void Buzzer::playTone(uint32_t frequency, uint32_t duration) {
     // Calculate the period (in microseconds) and number of cycles
@@ -39,10 +22,6 @@ void Buzzer::playTone(uint32_t frequency, uint32_t duration) {
         delayMicroseconds(period_us / 2);
     }
 }
-
-/**
- * @brief Turn off the buzzer
- */
 
 void Buzzer::turnOff() {
     digitalWrite(pin, LOW);

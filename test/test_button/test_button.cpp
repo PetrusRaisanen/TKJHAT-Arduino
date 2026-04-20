@@ -13,12 +13,12 @@ void test_button_not_pressed() {
 }
 
 void setup() {
-    delay(2000);
+    delay(1000);
     while(!Serial) {}
     UNITY_BEGIN();
 
     RUN_TEST(test_button_not_pressed);
-    delay(200);
+    delay(100);
 
     UNITY_END();
 }
