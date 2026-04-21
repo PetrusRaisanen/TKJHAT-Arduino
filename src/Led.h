@@ -3,8 +3,16 @@
 
 #include <Arduino.h>
 
-/** @brief A class to control an LED
+/** @brief A class to control simple red LED
  * 
+ * This is for the red LED (GPIO 14)
+ * 
+ *  * Pin:
+ * | Function  | Macro         | GPIO |
+ * |-----------|---------------|------|
+ * | Red LED   | @ref RED_LED_PIN / @ref LED1 | 14 |
+ * 
+ * {@
  */
 
 class Led {
@@ -27,6 +35,7 @@ public:
 
     /** @brief Toggle the LED state
      * 
+     * Switches the LED from ON to OFF or from OFF to ON, depending on its current state
      */
     void toggle();
 
@@ -42,5 +51,9 @@ public:
      */
     void blink(int n);
 };
+/** @example Led.ino
+ * 
+ *@}
+ */
 
 #endif

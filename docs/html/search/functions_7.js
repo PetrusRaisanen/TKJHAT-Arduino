@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['readsensordata_0',['readSensorData',['../class_i_c_m42670.html#a8a2c99e8af1220d355e89b64ad1d0b2f',1,'ICM42670']]],
-  ['reset_1',['reset',['../class_i_c_m42670.html#ad4fcdc3d00e12ce7a1e5d0d9ed9ad8ac',1,'ICM42670']]]
+  ['led_0',['Led',['../class_led.html#ad3a504b68a666190bd4e4363fd01b036',1,'Led']]],
+  ['lightsensor_1',['LightSensor',['../class_light_sensor.html#af011b1c503dd6bd4f4cceea08e81c906',1,'LightSensor']]]
 ];

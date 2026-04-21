@@ -107,7 +107,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A class to control an LED.  
+<p>A class to control simple red LED.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_led_8h_source.html">Led.h</a>&gt;</code></p>
@@ -120,17 +120,25 @@ void&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
 <tr class="memitem:aa3fafd020ed8c4e02ec4ab2505b5ded0" id="r_aa3fafd020ed8c4e02ec4ab2505b5ded0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa3fafd020ed8c4e02ec4ab2505b5ded0">blink</a> (int n)</td></tr>
 <tr class="memdesc:aa3fafd020ed8c4e02ec4ab2505b5ded0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blink the LED a given number of times.  <br /></td></tr>
 <tr class="memitem:ad3a504b68a666190bd4e4363fd01b036" id="r_ad3a504b68a666190bd4e4363fd01b036"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad3a504b68a666190bd4e4363fd01b036">Led</a> (uint8_t pin)</td></tr>
-<tr class="memdesc:ad3a504b68a666190bd4e4363fd01b036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_led.html" title="A class to control an LED.">Led</a> object.  <br /></td></tr>
+<tr class="memdesc:ad3a504b68a666190bd4e4363fd01b036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_led.html" title="A class to control simple red LED.">Led</a> object.  <br /></td></tr>
 <tr class="memitem:aeff356c09b559f575bc91f109f033b28" id="r_aeff356c09b559f575bc91f109f033b28"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aeff356c09b559f575bc91f109f033b28">set</a> (bool status)</td></tr>
 <tr class="memdesc:aeff356c09b559f575bc91f109f033b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the LED on or off.  <br /></td></tr>
-<tr class="memitem:a4f4d5ff6609d84f66aaf97544d783c93" id="r_a4f4d5ff6609d84f66aaf97544d783c93"><td class="memItemLeft"><a id="a4f4d5ff6609d84f66aaf97544d783c93" name="a4f4d5ff6609d84f66aaf97544d783c93"></a>
-void&#160;</td><td class="memItemRight"><b>toggle</b> ()</td></tr>
-<tr class="memdesc:a4f4d5ff6609d84f66aaf97544d783c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle the LED state. <br /></td></tr>
+<tr class="memitem:a4f4d5ff6609d84f66aaf97544d783c93" id="r_a4f4d5ff6609d84f66aaf97544d783c93"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4f4d5ff6609d84f66aaf97544d783c93">toggle</a> ()</td></tr>
+<tr class="memdesc:a4f4d5ff6609d84f66aaf97544d783c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle the LED state.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class to control an LED. </p>
-
-<p class="definition">Definition at line <a class="el" href="_led_8h_source.html#l00010">10</a> of file <a class="el" href="_led_8h_source.html">Led.h</a>.</p>
+<div class="textblock"><p>A class to control simple red LED. </p>
+<p>This is for the red LED (GPIO 14)</p>
+<ul>
+<li>Pin: <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function  </th><th class="markdownTableHeadNone">Macro  </th><th class="markdownTableHeadNone">GPIO  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Red LED  </td><td class="markdownTableBodyNone"><a class="el" href="group__board__pins.html#gab16f55d54417647f44dca8b11d988f02" title="RED_LED_PIN">RED_LED_PIN</a> / LED1  </td><td class="markdownTableBodyNone">14  </td></tr>
+</table>
+</li>
+</ul>
+<p>{@ </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad3a504b68a666190bd4e4363fd01b036" name="ad3a504b68a666190bd4e4363fd01b036"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3a504b68a666190bd4e4363fd01b036">&#9670;&#160;</a></span>Led()</h2>
@@ -147,7 +155,7 @@ void&#160;</td><td class="memItemRight"><b>toggle</b> ()</td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="class_led.html" title="A class to control an LED.">Led</a> object. </p>
+<p>Construct a new <a class="el" href="class_led.html" title="A class to control simple red LED.">Led</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>GPIO pin connected to the LED </td></tr>
@@ -205,6 +213,26 @@ void&#160;</td><td class="memItemRight"><b>toggle</b> ()</td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a4f4d5ff6609d84f66aaf97544d783c93" name="a4f4d5ff6609d84f66aaf97544d783c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4d5ff6609d84f66aaf97544d783c93">&#9670;&#160;</a></span>toggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Led::toggle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Toggle the LED state. </p>
+<p>Switches the LED from ON to OFF or from OFF to ON, depending on its current state </p>
 
 </div>
 </div>

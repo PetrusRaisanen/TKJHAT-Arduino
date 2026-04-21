@@ -111,23 +111,32 @@ $(function() {
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// VEML6030 sensor</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span>LightSensor {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        uint8_t sdapin;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        uint8_t sclpin;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        LightSensor(uint8_t sdapin, uint8_t sclpin);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">void</span> begin();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        uint32_t readLight();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">void</span> stop();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_light_sensor.html">   34</a></span><span class="keyword">class </span><a class="code hl_function" href="class_light_sensor.html#af011b1c503dd6bd4f4cceea08e81c906">LightSensor</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        uint8_t sdapin;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        uint8_t sclpin;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_light_sensor.html#af011b1c503dd6bd4f4cceea08e81c906">   46</a></span>        <a class="code hl_function" href="class_light_sensor.html#af011b1c503dd6bd4f4cceea08e81c906">LightSensor</a>(uint8_t sdapin, uint8_t sclpin);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_light_sensor.html#a9976e94340f0c34b0139da3c60019a96">   58</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_light_sensor.html#a9976e94340f0c34b0139da3c60019a96">begin</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_light_sensor.html#ae7d5294a6368c601566af85533133226">   64</a></span>        uint32_t <a class="code hl_function" href="class_light_sensor.html#ae7d5294a6368c601566af85533133226">readLight</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_light_sensor.html#a90bf73210f726b400fe21d4dab324a57">   70</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_light_sensor.html#a90bf73210f726b400fe21d4dab324a57">stop</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_light_sensor_html_a90bf73210f726b400fe21d4dab324a57"><div class="ttname"><a href="class_light_sensor.html#a90bf73210f726b400fe21d4dab324a57">LightSensor::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop the sensor.</div></div>
+<div class="ttc" id="aclass_light_sensor_html_a9976e94340f0c34b0139da3c60019a96"><div class="ttname"><a href="class_light_sensor.html#a9976e94340f0c34b0139da3c60019a96">LightSensor::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdoc">Initialize the VEML6030 light sensor.</div></div>
+<div class="ttc" id="aclass_light_sensor_html_ae7d5294a6368c601566af85533133226"><div class="ttname"><a href="class_light_sensor.html#ae7d5294a6368c601566af85533133226">LightSensor::readLight</a></div><div class="ttdeci">uint32_t readLight()</div><div class="ttdoc">Read the current light level in lux.</div></div>
+<div class="ttc" id="aclass_light_sensor_html_af011b1c503dd6bd4f4cceea08e81c906"><div class="ttname"><a href="class_light_sensor.html#af011b1c503dd6bd4f4cceea08e81c906">LightSensor::LightSensor</a></div><div class="ttdeci">LightSensor(uint8_t sdapin, uint8_t sclpin)</div><div class="ttdoc">Construct a new LightSensor object.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

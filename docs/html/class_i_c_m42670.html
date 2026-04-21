@@ -107,7 +107,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>C++ class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.  
+<p>A class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_i_c_m42670_8h_source.html">ICM42670.h</a>&gt;</code></p>
@@ -120,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a83aaaf089a1e4592530cdb6dbe35cc54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable low-noise mode for both accelerometer and gyroscope.  <br /></td></tr>
 <tr class="memitem:af416a4e9826bed48968c29717003e624" id="r_af416a4e9826bed48968c29717003e624"><td class="memItemLeft"><a id="af416a4e9826bed48968c29717003e624" name="af416a4e9826bed48968c29717003e624"></a>
 &#160;</td><td class="memItemRight"><b>ICM42670</b> ()</td></tr>
-<tr class="memdesc:af416a4e9826bed48968c29717003e624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_i_c_m42670.html" title="C++ class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.">ICM42670</a> object Default constructor uses the default Wire I2C bus. You can also provide a custom TwoWire instance if needed. <br /></td></tr>
+<tr class="memdesc:af416a4e9826bed48968c29717003e624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_i_c_m42670.html" title="A class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.">ICM42670</a> object Default constructor uses the default Wire I2C bus. You can also provide a custom TwoWire instance if needed. <br /></td></tr>
 <tr class="memitem:a8a2c99e8af1220d355e89b64ad1d0b2f" id="r_a8a2c99e8af1220d355e89b64ad1d0b2f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8a2c99e8af1220d355e89b64ad1d0b2f">readSensorData</a> (float &amp;ax, float &amp;ay, float &amp;az, float &amp;gx, float &amp;gy, float &amp;gz, float &amp;t)</td></tr>
 <tr class="memdesc:a8a2c99e8af1220d355e89b64ad1d0b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable low-noise mode for both accelerometer and gyroscope.  <br /></td></tr>
 <tr class="memitem:ad4fcdc3d00e12ce7a1e5d0d9ed9ad8ac" id="r_ad4fcdc3d00e12ce7a1e5d0d9ed9ad8ac"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad4fcdc3d00e12ce7a1e5d0d9ed9ad8ac">reset</a> ()</td></tr>
@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aeef53dfcc5a8533c3bd3c0f184c0fe3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start IMU with SDK default settings and enable LN mode.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>C++ class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. </p>
+<div class="textblock"><p>A class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope. </p>
 <p>Datasheet can be found at: <a href="https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf">https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf</a> Functions are based on <a class="el" href="class_t_k_j_h_a_t.html" title="Main interface for accessing TKJHAT board features.">TKJHAT</a> C SDK with minimal modifications to fit Arduino style and the class structure.</p>
 <p>The IMU is connected on I2C at <a class="el" href="group___macros.html#ga7cad44e67ae63404e898a4cea8ecbc14" title="ICM42670_I2C_ADDRESS">ICM42670_I2C_ADDRESS</a> (0x69).</p>
 <p><b>Recommended defaults</b></p><ul>
@@ -147,8 +147,6 @@ Public Member Functions</h2></td></tr>
 <li>Other modes (LP/ULP/hybrid) are not implemented in this SDK.</li>
 </ul>
 <dl class="section pre"><dt>Precondition</dt><dd>The I2C interface must be initialized (use init_i2c_default() or init_hat_sdk()). {@ </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_i_c_m42670_8h_source.html#l00029">29</a> of file <a class="el" href="_i_c_m42670_8h_source.html">ICM42670.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a28e4f775e9fe04a02cb49e559c4459cb" name="a28e4f775e9fe04a02cb49e559c4459cb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28e4f775e9fe04a02cb49e559c4459cb">&#9670;&#160;</a></span>begin()</h2>
@@ -342,11 +340,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Start IMU with SDK default settings and enable LN mode. </p>
 <p>Calls:</p><ul>
-<li>::startAccel(<a class="el" href="group___macros.html#ga146f26b8804073ca0ec852c0a6b8a873" title="ICM42670_ACCEL_ODR_DEFAULT">ICM42670_ACCEL_ODR_DEFAULT</a>, <a class="el" href="group___macros.html#ga51628454e4633200147136b812075518" title="ICM42670_ACCEL_FSR_DEFAULT">ICM42670_ACCEL_FSR_DEFAULT</a>)</li>
-<li>::startGyro (<a class="el" href="group___macros.html#ga776be99f7a0d33b09645d2d94a5a7e18" title="ICM42670_GYRO_ODR_DEFAULT">ICM42670_GYRO_ODR_DEFAULT</a>, <a class="el" href="group___macros.html#ga8c1fff6558ecdb8c1eb731bc76e99438" title="ICM42670_GYRO_FSR_DEFAULT">ICM42670_GYRO_FSR_DEFAULT</a>)</li>
-<li>::enableAccelGyroLnMode()</li>
+<li><a class="el" href="#a21f753056f0ad44d71d023f7d3c0e1b1" title="Start the accelerometer.">ICM42670::startAccel</a>(<a class="el" href="group___macros.html#ga146f26b8804073ca0ec852c0a6b8a873" title="ICM42670_ACCEL_ODR_DEFAULT">ICM42670_ACCEL_ODR_DEFAULT</a>, <a class="el" href="group___macros.html#ga51628454e4633200147136b812075518" title="ICM42670_ACCEL_FSR_DEFAULT">ICM42670_ACCEL_FSR_DEFAULT</a>)</li>
+<li><a class="el" href="#a5bda01bfb6eb304f1e932553b2531d02" title="Start the gyroscope.">ICM42670::startGyro</a> (<a class="el" href="group___macros.html#ga776be99f7a0d33b09645d2d94a5a7e18" title="ICM42670_GYRO_ODR_DEFAULT">ICM42670_GYRO_ODR_DEFAULT</a>, <a class="el" href="group___macros.html#ga8c1fff6558ecdb8c1eb731bc76e99438" title="ICM42670_GYRO_FSR_DEFAULT">ICM42670_GYRO_FSR_DEFAULT</a>)</li>
+<li><a class="el" href="#a83aaaf089a1e4592530cdb6dbe35cc54" title="Enable low-noise mode for both accelerometer and gyroscope.">ICM42670::enableAccelGyroLnMode()</a></li>
 </ul>
-<dl class="section pre"><dt>Precondition</dt><dd>Call ::begin() successfully before this function.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Call <a class="el" href="#a28e4f775e9fe04a02cb49e559c4459cb" title="Initialize the IMU.">ICM42670::begin()</a> successfully before this function.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on error. </dd></dl>
 
 </div>

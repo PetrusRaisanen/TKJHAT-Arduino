@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['library_0',['TKJHAT Arduino Library',['../index.html',1,'']]]
+  ['started_0',['Getting Started',['../index.html#autotoc_md6',1,'']]]
 ];

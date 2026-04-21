@@ -1,4 +1,4 @@
-# TKJHAT Arduino Library
+# Arduino TKJHAT
 
 Library for the Pico HAT extension board for the Raspberry Pi Pico W.
 
@@ -28,14 +28,18 @@ void loop() {
 
 The following components are available on the board:
 
+**Actuators**
 - Button: `button1`, `button2`
 - Led: `led`
 - RGBLed: `rgbLed`
 - Buzzer: `buzzer`
-- Display (SSD1306): `display`
-- Lightsensor: `lightSensor`
-- ICM42670 (IMU): `icm42670`
-- Temperature and humidity sensor (HDC2021): `hdc2021`
+- Display, SSD1306 OLED: `display`
+
+**Sensors**
+- Microphone: `microphone`
+- LightSensor, VEML6030: `lightSensor`
+- ICM42670, 6-axis accelerometer + gyroscope: `icm42670`
+- HDC2021, Temperature and humidity sensor: `hdc2021`
 
 ---
 
@@ -43,7 +47,11 @@ The following components are available on the board:
 
 Try these example sketches:
 
-- **Button** → `examples/Button/Button.ino`
-- **Led** → `examples/Led/Led.ino`
-- **Display** → `examples/Display/Display.ino`
-- **Buzzer** → `examples/Buzzer/Buzzer.ino`
+- \ref Button.ino
+- \ref Led.ino
+- \ref RGBLed.ino
+- \ref Buzzer.ino
+- \ref Display.ino
+- \ref Lightsensor.ino
+- \ref ICM42670.ino
+- \ref HDC2021.ino

@@ -1,13 +1,3 @@
-/**
- * @file TKJHAT.h
- * @brief Main interface for the TKJHAT board
- *
- * This class provides access to all peripherals available on the TKJHAT
- * extension board. Each component is exposed as a public member object.
- *
- * All peripherals must be initialized by calling hat.begin() in setup().
- */
-
 #ifndef TKJHAT_H
 #define TKJHAT_H
 

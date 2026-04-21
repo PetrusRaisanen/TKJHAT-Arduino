@@ -106,34 +106,37 @@ $(function() {
   <div class="headertitle"><div class="title">RGBLed.ino</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>/*</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>  RGB LED Example</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  This example demonstrates how to use the RGB LED on the TKJHAT. </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  The RGB LED can be controlled by setting the intensity of the red, green, and blue components.</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  Circuit:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  - RGB LED integrated in Pico HAT</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  created 2026</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> */</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  RGB LED Example</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  This example demonstrates how to use the RGB LED on the TKJHAT. </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  The RGB LED can be controlled by setting the intensity of the red, green, and blue components.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  Circuit:</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  - RGB LED integrated in Pico HAT</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  created 2026</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>#include &quot;TKJHAT.h&quot;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;TKJHAT.h&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>// Create an instance of the TKJHAT class</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>TKJHAT hat; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// Create an instance of the TKJHAT class</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_class" href="class_t_k_j_h_a_t.html">TKJHAT</a> hat; </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>// RGBLed.begin() initializes the RGB LED, and RGBLed.write() sets the color of the LED</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>// First value is for red, second for green, and third for blue. Each value can range from 0 to 255.</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>void setup() {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    hat.rgbLed.begin();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// RGBLed.begin() initializes the RGB LED, and RGBLed.write() sets the color of the LED</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// First value is for red, second for green, and third for blue. Each value can range from 0 to 255.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> setup() {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    hat.<a class="code hl_variable" href="class_t_k_j_h_a_t.html#ad07a038e4258baf33d0a22156c16f215">rgbLed</a>.<a class="code hl_function" href="class_r_g_b_led.html#a4628b2d3e38d6f751069576e50df4499">begin</a>();</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    hat.rgbLed.write(10, 0, 10);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>// In this example, we don&#39;t need to do anything in the loop</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>void loop() {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// In this example, we don&#39;t need to do anything in the loop</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> loop() {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aclass_r_g_b_led_html_a4628b2d3e38d6f751069576e50df4499"><div class="ttname"><a href="class_r_g_b_led.html#a4628b2d3e38d6f751069576e50df4499">RGBLed::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdoc">Initialize the RGB LED.</div></div>
+<div class="ttc" id="aclass_t_k_j_h_a_t_html"><div class="ttname"><a href="class_t_k_j_h_a_t.html">TKJHAT</a></div><div class="ttdoc">Main interface for accessing TKJHAT board features.</div><div class="ttdef"><b>Definition</b> <a href="_t_k_j_h_a_t_8h_source.html#l00035">TKJHAT.h:35</a></div></div>
+<div class="ttc" id="aclass_t_k_j_h_a_t_html_ad07a038e4258baf33d0a22156c16f215"><div class="ttname"><a href="class_t_k_j_h_a_t.html#ad07a038e4258baf33d0a22156c16f215">TKJHAT::rgbLed</a></div><div class="ttdeci">RGBLed rgbLed</div><div class="ttdoc">RGB LED.</div><div class="ttdef"><b>Definition</b> <a href="_t_k_j_h_a_t_8h_source.html#l00053">TKJHAT.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

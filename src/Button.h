@@ -1,14 +1,3 @@
-/**
- * @file Button.h
- * @brief Button interface for the TKJHAT board
- *
- * This class provides a simple interface for reading
- * the state of a push button connected to the TKJHAT board.
- *
- * The button is assumed to be connected using a pull-up configuration.
- * The pressed state corresponds to a LOW signal on the pin.
- */
-
 #ifndef TKJHAT_BUTTON_H
 #define TKJHAT_BUTTON_H
 
@@ -16,8 +5,23 @@
 
 /**
  * @class Button
- * @brief Represents a push button connected to a GPIO pin.
+ * @brief A class to handle a push button connected to the TKJHAT board
+ * 
+ * @details
+ * The JTKJ HAT exposes two user buttons connected to GPIO 2 and GPIO 22.
+ * They are configured as digital inputs using the board’s hardware pull-downs.
+ * Use @c gpio_get(SW1_PIN) or @c gpio_get(SW2_PIN) to poll their state.
+ *
+ * Pins:
+ * | Name | Macro       | GPIO |
+ * |------|-------------|------|
+ * | SW1  | @ref SW1_PIN / @ref BUTTON1 | 2 |
+ * | SW2  | @ref SW2_PIN / @ref BUTTON2 | 22 |
+ *
+ * @note Logic is active-high (pressed = 1, released = 0).
+ * @{
  */
+
 class Button {
   private:
     uint8_t pin; ///< GPIO pin connected to the button
@@ -26,7 +30,7 @@ class Button {
     /**
      * @brief Create a Button instance
      * 
-     * @param pin GPIO pin connected to the button
+     * @param pin GPIO pin connected to the button, either 2 (SW1) or 22 (SW2)
      */
     Button(uint8_t pin);
     /**
@@ -43,4 +47,8 @@ class Button {
     bool isPressed();
 };
 
+/** @example Button.ino
+ * 
+ *@}
+ */
 #endif

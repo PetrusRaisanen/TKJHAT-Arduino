@@ -5,7 +5,7 @@
 #include <Wire.h>
 
 /** 
- * @brief C++ class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.
+ * @brief A class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.
  * @details
  * Datasheet can be found at: https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf
  * Functions are based on TKJHAT C SDK with minimal modifications to fit Arduino style and the class structure.
@@ -97,26 +97,18 @@ public:
     /** @brief Start IMU with SDK default settings and enable LN mode
      * 
      * Calls:
-     * - ::startAccel(@ref ICM42670_ACCEL_ODR_DEFAULT,
+     * - ICM42670::startAccel(@ref ICM42670_ACCEL_ODR_DEFAULT,
      *                 @ref ICM42670_ACCEL_FSR_DEFAULT)
-     * - ::startGyro (@ref ICM42670_GYRO_ODR_DEFAULT,
+     * - ICM42670::startGyro (@ref ICM42670_GYRO_ODR_DEFAULT,
      *                 @ref ICM42670_GYRO_FSR_DEFAULT)
-     * - ::enableAccelGyroLnMode()
+     * - ICM42670::enableAccelGyroLnMode()
      *
-     * @pre Call ::begin() successfully before this function.
+     * @pre Call ICM42670::begin() successfully before this function.
      *
      * @return true on success, false on error.
      */
     bool startWithDefaultValues(void);
 
-    /** @brief Private member variables
-     * 
-        * - wire: Pointer to the TwoWire instance used for I2C communication.
-        * - address: I2C address of the device (0x68 or 0x69).
-        * - aRes: Accelerometer resolution in LSB/g, calculated based on the FSR setting.
-        * - gRes: Gyroscope resolution in LSB/dps, calculated based on the FSR setting.
-     * 
-    */
 private:
     TwoWire* wire;
     uint8_t address;

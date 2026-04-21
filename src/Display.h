@@ -4,7 +4,7 @@
 #include <Arduino.h>
 
 /**
- * @brief C++ class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations
+ * @brief A class for the SSD1306 OLED display, uses the ssd1306 library for low-level operations
  * @details
  * Display is connected to the I2C bus using address @ref SSD1306_I2C_ADDRESS (0x3C).
  * Functions are based on TKJHAT C SDK with minimal modifications to fit Arduino style and the class structure.

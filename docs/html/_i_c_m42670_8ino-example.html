@@ -106,15 +106,73 @@ $(function() {
   <div class="headertitle"><div class="title">ICM42670.ino</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line">#include &quot;TKJHAT.h&quot;</div>
+<div class="fragment"><div class="line"><span class="comment">/* TKJHAT ICM42670 Example</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">This example demonstrates how to use the ICM42670 IMU sensor on the TKJHAT. </span></div>
+<div class="line"><span class="comment">It initializes the sensor, performs calibration, and continuously reads and prints accelerometer, </span></div>
+<div class="line"><span class="comment">gyroscope, and temperature data.</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">Circuit:</span></div>
+<div class="line"><span class="comment">- ICM42670 IMU integrated in Pico HAT</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">created 2026</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="line"> </div>
-<div class="line">TKJHAT hat;</div>
+<div class="line"><span class="preprocessor">#include &lt;TKJHAT.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line">void setup() {</div>
-<div class="line">    Serial.begin(9600);</div>
-<div class="line">    hat.begin();</div>
-<div class="line">    </div>
+<div class="line"><a id="_a0" name="_a0"></a><a class="code hl_class" href="class_t_k_j_h_a_t.html">TKJHAT</a> hat;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Bias values for calibration (replace with actual calibration results)</span></div>
+<div class="line"><span class="keywordtype">float</span> accelBias[3] = {0.0, 0.0, 0.0};</div>
+<div class="line"><span class="keywordtype">float</span> gyroBias[3] = {0.0, 0.0, 0.0};</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> setup() {</div>
+<div class="line">  <span class="comment">// Start serial communication for output</span></div>
+<div class="line">  Serial.<a id="a1" name="a1"></a><a class="code hl_function" href="class_t_k_j_h_a_t.html#a7d1c98c15473cb3c15c3b2f6e5e81d04">begin</a>(115200);</div>
+<div class="line">  <span class="comment">// Wait for serial connection</span></div>
+<div class="line">  <span class="keywordflow">while</span> (!Serial); </div>
+<div class="line"> </div>
+<div class="line">  Serial.println(<span class="stringliteral">&quot;ax ay az gx gy gz temp&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Initialize the HAT with the peripherals including IMU</span></div>
+<div class="line">  hat.begin();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Start the sensor and perform calibration</span></div>
+<div class="line">  hat.icm42670.startWithDefaultValues();</div>
+<div class="line">  hat.icm42670.calibrateAccel(accelBias);</div>
+<div class="line">  hat.icm42670.calibrateGyro(gyroBias);</div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> loop() {</div>
+<div class="line">  <span class="comment">// Variables to hold sensor data</span></div>
+<div class="line">  <span class="keywordtype">float</span> ax, ay, az, gx, gy, gz, t;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Read sensor data (ax, ay, az in g; gx, gy, gz in dps; t in °C)</span></div>
+<div class="line">  hat.icm42670.readSensorData(ax, ay, az, gx, gy, gz, t);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Apply calibration bias correction</span></div>
+<div class="line">  ax -= accelBias[0];</div>
+<div class="line">  ay -= accelBias[1];</div>
+<div class="line">  az -= accelBias[2];</div>
+<div class="line">  gx -= gyroBias[0];</div>
+<div class="line">  gy -= gyroBias[1];</div>
+<div class="line">  gz -= gyroBias[2];</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Print the sensor data in a space-separated format</span></div>
+<div class="line">  Serial.print(ax); Serial.print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  Serial.print(ay); Serial.print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  Serial.print(az); Serial.print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  Serial.print(gx); Serial.print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  Serial.print(gy); Serial.print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  Serial.print(gz); Serial.print(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  Serial.println(t);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Delay before next reading</span></div>
+<div class="line">  delay(200);</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_t_k_j_h_a_t_html"><div class="ttname"><a href="class_t_k_j_h_a_t.html">TKJHAT</a></div><div class="ttdoc">Main interface for accessing TKJHAT board features.</div><div class="ttdef"><b>Definition</b> TKJHAT.h:35</div></div>
+<div class="ttc" id="aclass_t_k_j_h_a_t_html_a7d1c98c15473cb3c15c3b2f6e5e81d04"><div class="ttname"><a href="class_t_k_j_h_a_t.html#a7d1c98c15473cb3c15c3b2f6e5e81d04">TKJHAT::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdoc">Initialize all peripherals on the HAT Also initializes the default I2C bus for sensors and display.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
