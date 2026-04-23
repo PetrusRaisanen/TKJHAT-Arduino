@@ -1,15 +1,19 @@
 #include <Arduino.h>
 #include <unity.h>
-#include "TKJHAT.h"
+#include "Button.h"
+#include "pins.h"
 
-TKJHAT hat;
+Button button1(SW1_PIN);
+Button button2(SW2_PIN);
 
 void setUp(void) {
-    hat.begin();
+    button1.begin();
+    button2.begin();
 }
 
-void test_button_not_pressed() {
-    TEST_ASSERT_FALSE(hat.button1.isPressed());
+void testButtonsNotPressed() {
+    TEST_ASSERT_FALSE(button1.isPressed());
+    TEST_ASSERT_FALSE(button2.isPressed());
 }
 
 void setup() {
@@ -17,7 +21,7 @@ void setup() {
     while(!Serial) {}
     UNITY_BEGIN();
 
-    RUN_TEST(test_button_not_pressed);
+    RUN_TEST(testButtonsNotPressed);
     delay(100);
 
     UNITY_END();

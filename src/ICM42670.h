@@ -22,7 +22,7 @@
  * - This SDK supports Low-Noise (LN) mode (higher precision, higher power).
  * - Other modes (LP/ULP/hybrid) are not implemented in this SDK.
  *
- * @pre The I2C interface must be initialized (use @ref init_i2c_default() or @ref init_hat_sdk()).
+ * @pre The I2C interface must be initialized (use @ref TKJHAT::begin()).
  * {@
  */
 

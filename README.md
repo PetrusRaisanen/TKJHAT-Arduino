@@ -1,10 +1,10 @@
 # TKJHAT Arduino Library
 
-Library for the Pico HAT extension board for the Raspberry Pi Pico W.
+Arduino library for the Pico HAT extension board for Raspberry Pi Pico W.
 
 This library provides access to onboard components including buttons, LEDs, sensors, display, and buzzer using Arduino-style APIs.
 
-[API Docs](docs/html/index.html)
+[See documentation](https://petrusraisanen.github.io/TKJHAT-Arduino/index.html)
 
 ---
 
@@ -17,13 +17,13 @@ The following components are available on the board:
 - Led: `led`
 - RGBLed: `rgbLed`
 - Buzzer: `buzzer`
-- Display, SSD1306 OLED: `display`
+- SSD1306 OLED display: `display`
 
 **Sensors**
 - Microphone: `microphone`
-- LightSensor, VEML6030: `lightSensor`
-- ICM42670, 6-axis accelerometer + gyroscope: `icm42670`
-- HDC2021, Temperature and humidity sensor: `hdc2021`
+- VEML6030 ambient light sensor: `lightSensor`
+- ICM42670 6-axis accelerometer + gyroscope: `icm42670`
+- HDC2021 temperature and humidity sensor: `hdc2021`
 
 ---
 
