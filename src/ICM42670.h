@@ -52,9 +52,7 @@ public:
      * 
      * @return true on success, false on error.
      */
-    bool reset();
-
-    bool readWhoAmI(uint8_t& who);
+   bool reset();
 
     void calibrateAccel(float *dest1);
     void calibrateGyro(float *dest2);
