@@ -22,7 +22,7 @@
  * - This SDK supports Low-Noise (LN) mode (higher precision, higher power).
  * - Other modes (LP/ULP/hybrid) are not implemented in this SDK.
  *
- * @pre The I2C interface must be initialized (use @ref init_i2c_default() or @ref init_hat_sdk()).
+ * @pre The I2C interface must be initialized (use @ref TKJHAT::begin()).
  * {@
  */
 
@@ -52,9 +52,7 @@ public:
      * 
      * @return true on success, false on error.
      */
-    bool reset();
-
-    bool readWhoAmI(uint8_t& who);
+   bool reset();
 
     void calibrateAccel(float *dest1);
     void calibrateGyro(float *dest2);

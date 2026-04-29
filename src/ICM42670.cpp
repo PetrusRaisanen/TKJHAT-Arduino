@@ -102,21 +102,26 @@ bool ICM42670::begin() {
     return true;
 }
 
+
 // Reset the sensor
 bool ICM42670::reset() {
-    bool rc = writeByte(ICM42670_REG_SIGNAL_PATH_RESET, ICM42670_RESET_CONFIG_BITS); // SIGNAL_PATH_RESET register, reset command
+    if(!writeByte(ICM42670_REG_SIGNAL_PATH_RESET, ICM42670_RESET_CONFIG_BITS)) { // SIGNAL_PATH_RESET register, reset command
+        return false;
+    }
     delayMicroseconds(400);   // small wait
-
-    for (int i = 0; i < 100; ++i) {  // ~5 ms total @ 50 us step
+    for (int i = 0; i < 100; ++i) {
         uint8_t v = 0;
-        if (readByte(0x00, v) && (v & (1u << 3))) {
-            delayMicroseconds(200);  // settling gap before next writes
+        readByte(0x02, v);
+
+        // Bit 4 cleared → reset complete
+        if ((v & 0x10) == 0) {
+            delayMicroseconds(200);  // settling time
             return true;
         }
+
         delayMicroseconds(50);
     }
-    
-    return false;
+    return false; // timeout
 }
 
 // Start accelerometer with specified ODR and FSR

@@ -1,24 +1,25 @@
 #include <Arduino.h>
 #include <unity.h>
-#include "TKJHAT.h"
+#include "Led.h"
+#include "pins.h"
 
-TKJHAT hat;
+Led led(RED_LED_PIN);
 
 void setUp(void) {
-    hat.begin();
+    led.begin();
 }
 
 void tearDown(void) {
 }
 
-void test_led_set_on() {
-    hat.led.set(true);
+void testLedSetOn() {
+    led.set(true);
     delay(10);
     TEST_ASSERT_EQUAL(HIGH, digitalRead(RED_LED_PIN));
 }
 
-void test_led_set_off() {
-    hat.led.set(false);
+void testLedSetOff() {
+    led.set(false);
     delay(10);
     TEST_ASSERT_EQUAL(LOW, digitalRead(RED_LED_PIN));
 }
@@ -28,9 +29,9 @@ void setup() {
     while(!Serial) {}
     UNITY_BEGIN();
 
-    RUN_TEST(test_led_set_on);
+    RUN_TEST(testLedSetOn);
     delay(100);
-    RUN_TEST(test_led_set_off);
+    RUN_TEST(testLedSetOff);
     delay(100);
 
     UNITY_END();

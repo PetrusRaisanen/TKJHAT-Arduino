@@ -13,7 +13,7 @@ void tearDown(void) {
 }
 
 // Test that write(255,0,0) turns on only the red LED channel (LOW = on, HIGH = off)
-void test_rgbled_write_red() {
+void testRgbLedWriteRed() {
     hat.rgbLed.write(255, 0, 0);
     delay(10);
     TEST_ASSERT_EQUAL(LOW, digitalRead(RGB_LED_R));
@@ -22,7 +22,7 @@ void test_rgbled_write_red() {
 }
 
 // Test that write(0,255,0) turns on only the green LED channel (LOW = on, HIGH = off)
-void test_rgbled_write_green() {
+void testRgbLedWriteGreen() {
     hat.rgbLed.write(0, 255, 0);
     delay(10);
     TEST_ASSERT_EQUAL(HIGH, digitalRead(RGB_LED_R));
@@ -31,7 +31,7 @@ void test_rgbled_write_green() {
 }
 
 // Test that write(0,0,255) turns on only the blue LED channel (LOW = on, HIGH = off)
-void test_rgbled_write_blue() {
+void testRgbLedWriteBlue() {
     hat.rgbLed.write(0, 0, 255);
     delay(10);
     TEST_ASSERT_EQUAL(HIGH, digitalRead(RGB_LED_R));
@@ -40,7 +40,7 @@ void test_rgbled_write_blue() {
 }
 
 // Test that stop() turns off all LED channels (HIGH = off)
-void test_rgbled_stop() {
+void testRgbLedStop() {
     hat.rgbLed.stop();
     delay(10);
     TEST_ASSERT_EQUAL(HIGH, digitalRead(RGB_LED_R));
@@ -54,16 +54,16 @@ void setup() {
     while (!Serial) {}
     UNITY_BEGIN();
 
-    RUN_TEST(test_rgbled_write_red);
+    RUN_TEST(testRgbLedWriteRed);
     delay(100);
 
-    RUN_TEST(test_rgbled_write_green);
+    RUN_TEST(testRgbLedWriteGreen);
     delay(100);
 
-    RUN_TEST(test_rgbled_write_blue);
+    RUN_TEST(testRgbLedWriteBlue);
     delay(100);
 
-    RUN_TEST(test_rgbled_stop);
+    RUN_TEST(testRgbLedStop);
     delay(100);
 
     UNITY_END();

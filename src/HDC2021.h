@@ -25,7 +25,7 @@
  *
  * These thresholds are part of the sensor’s alert system.
  * 
- * @pre The I2C interface must be initialized (use @ref TKJHAT::begin() or @ref HDC2021::begin()).
+ * @pre The I2C interface must be initialized (use @ref TKJHAT::begin()).
  * 
  * @see Datasheet: https://www.ti.com/lit/ds/symlink/hdc2021.pdf  
  * @see Usage Guide: https://www.ti.com/lit/ug/snau250/snau250.pdf
