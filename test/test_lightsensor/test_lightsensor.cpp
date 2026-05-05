@@ -7,6 +7,7 @@
 LightSensor lightSensor(DEFAULT_I2C_SDA_PIN, DEFAULT_I2C_SCL_PIN);
 
 void setUp(void) {
+    // Initialize I2C communication
     Wire.setSDA(DEFAULT_I2C_SDA_PIN);
     Wire.setSCL(DEFAULT_I2C_SCL_PIN);
     Wire.begin();
