@@ -109,19 +109,16 @@ bool ICM42670::reset() {
         return false;
     }
     delayMicroseconds(400);   // small wait
-    for (int i = 0; i < 100; ++i) {
+    for (int i = 0; i < 100; ++i) {  // ~5 ms total @ 50 us step
         uint8_t v = 0;
-        readByte(0x02, v);
-
-        // Bit 4 cleared → reset complete
-        if ((v & 0x10) == 0) {
-            delayMicroseconds(200);  // settling time
+        if (readByte(0x00, v) && (v & (1u << 3))) {
+            delayMicroseconds(200);  // settling gap before next writes
             return true;
         }
-
         delayMicroseconds(50);
     }
-    return false; // timeout
+    
+    return false;
 }
 
 // Start accelerometer with specified ODR and FSR
