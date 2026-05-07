@@ -31,6 +31,10 @@ void Display::writeText(const char* text) {
     // Delay for 800 milliseconds
     delay(800);
 }
+// Accept String objects
+void Display::writeText(const String& text) {
+    writeText(text.c_str());
+}
 
 // Write text to the display with a specified scale and position
 void Display::writeTextPositioned(int16_t x, int16_t y, const char* text, uint8_t scale) {
@@ -41,6 +45,10 @@ void Display::writeTextPositioned(int16_t x, int16_t y, const char* text, uint8_
 
     // Delay for 800 milliseconds
     delay(800);
+}
+// Accept String objects
+void Display::writeTextPositioned(int16_t x, int16_t y, const String& text, uint8_t scale) {
+    writeTextPositioned(x, y, text.c_str(), scale);
 }
 
 void Display::putp(int16_t x, int16_t y) {

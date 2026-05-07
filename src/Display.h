@@ -54,6 +54,7 @@ public:
      * 
      */
     void writeText(const char* text);
+    void writeText(const String& text);
 
     /** @brief Write text to the display with a specified scale and position
      * 
@@ -64,6 +65,7 @@ public:
      * 
      */
     void writeTextPositioned(int16_t x, int16_t y, const char* text, uint8_t scale = 1);
+    void writeTextPositioned(int16_t x, int16_t y, const String& text, uint8_t scale = 1);
 
     // Helper functions for drawing primitives
     void putp(int16_t x, int16_t y);
