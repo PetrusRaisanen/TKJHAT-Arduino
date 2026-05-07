@@ -12,6 +12,7 @@ void setUp(void) {
 }
 
 void testButtonsNotPressed() {
+    // Test that both buttons are not pressed at the start
     TEST_ASSERT_FALSE(button1.isPressed());
     TEST_ASSERT_FALSE(button2.isPressed());
 }

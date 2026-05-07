@@ -17,6 +17,7 @@ void testPlayTone() {
 }
 
 void testPlayToneEndsLow() {
+    // Test that the buzzer pin is LOW after playing a tone
     buzzer.playTone(1000, 10);
     TEST_ASSERT_EQUAL(LOW, digitalRead(BUZZER_PIN));
 }
