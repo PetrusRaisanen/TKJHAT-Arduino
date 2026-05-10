@@ -23,7 +23,7 @@
  * - Other modes (LP/ULP/hybrid) are not implemented in this SDK.
  *
  * @pre The I2C interface must be initialized (use @ref TKJHAT::begin()).
- * {@
+ * @{
  */
 
 class ICM42670 {

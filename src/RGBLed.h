@@ -16,7 +16,7 @@
  * | RGB Blue  | @ref RGB_LED_B | 20 |
  * 
  * Colors are set with @ref write using 8-bit channels (0 = full on, 255 = off).
- * {@
+ * @{
  */
 
 class RGBLed {

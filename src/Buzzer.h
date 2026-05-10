@@ -12,8 +12,7 @@
  * **Buzzer (@ref BUZZER_PIN — GPIO 17)**
  * - Output-only pin for tone generation using PWM or software toggling.
  * - Useful for short alerts, melodies, or feedback tones.
- *
- * {@
+ * @{
 */
 
 class Buzzer {

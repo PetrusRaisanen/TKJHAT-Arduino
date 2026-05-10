@@ -27,7 +27,7 @@
  * @see Application Note: https://www.vishay.com/docs/84367/designingveml6030.pdf  
  * @see Datasheet: https://www.vishay.com/docs/84366/veml6030.pdf
  * 
- * {@
+ * @{
  */
 
 

@@ -21,6 +21,7 @@
  * | Clock pin | @ref PDM_CLK (GPIO 15) |
  * | Sample rate | 16 kHz |
  * | Buffer size | 256 samples |
+ * @{
  */
 
 extern "C" {
@@ -87,5 +88,8 @@ public:
  * */
     int getSamples(int16_t* buffer, size_t samples);
 };
+/**
+ *@}
+*/
 
 #endif

@@ -29,7 +29,7 @@
  * 
  * @see Datasheet: https://www.ti.com/lit/ds/symlink/hdc2021.pdf  
  * @see Usage Guide: https://www.ti.com/lit/ug/snau250/snau250.pdf
- * {@
+ * @{
  */
 
 #include <Arduino.h>

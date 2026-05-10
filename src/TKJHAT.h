@@ -30,6 +30,7 @@
  *   }
  * }
  * @endcode
+ * @{
  */
 
 class TKJHAT {
@@ -71,6 +72,7 @@ public:
      * Also initializes the default I2C bus for sensors and display
      *
      * Must be called in setup() before using any components.
+     * @}
      */
     void begin();
 };
