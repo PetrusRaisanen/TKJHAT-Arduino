@@ -52,8 +52,7 @@ FULL_SIDEBAR           = YES
 EXAMPLE_PATH           = examples
 EXAMPLE_RECURSIVE      = YES
 
-EXCLUDE                = src\display\ 
-EXCLUDE 	       = src\microphone
+EXCLUDE_PATTERNS = */display/* */microphone/*
 
 ENABLE_PREPROCESSING   = YES
 MARKDOWN_SUPPORT       = YES
