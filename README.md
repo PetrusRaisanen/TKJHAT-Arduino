@@ -28,4 +28,4 @@ The following components are available on the board:
 ---
 
 ## Installation
-
+Available in the library manager in Arduino IDE
