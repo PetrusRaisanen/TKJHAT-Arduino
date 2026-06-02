@@ -7,24 +7,6 @@ This library provides access to onboard components including buttons, LEDs, sens
 
 ---
 
-## Basic Usage
-
-```cpp
-#include "TKJHAT.h"
-
-TKJHAT hat;
-
-void setup() {
-    // example code
-}
-
-void loop() {
-    //...
-}
-```
-
----
-
 ## Components
 
 The following components are available on the board:

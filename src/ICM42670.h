@@ -7,7 +7,7 @@
 /** 
  * @brief A class for the TDK InvenSense ICM-42670 6-axis accelerometer + gyroscope.
  * @details
- * Datasheet can be found at: https://invensense.tdk.com/wp-content/uploads/2021/07/DS-000451-ICM-42670-P-v1.0.pdf
+ * Datasheet can be found at: https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-05/ds-000451-icm-42670-p-datasheet.pdf?VersionId=N_6riEzGYuWEHO3quauImb_3ntFIed8G
  * Functions are based on TKJHAT C SDK with minimal modifications to fit Arduino style and the class structure.
  * 
  * The IMU is connected on I2C at @ref ICM42670_I2C_ADDRESS (0x69).
@@ -92,7 +92,7 @@ public:
      */
     bool enableAccelGyroLnMode(void);
 
-    /** @brief Start IMU with SDK default settings and enable LN mode
+    /** @brief Start IMU with SDK default settings and enable Low-Noise mode
      * 
      * Calls:
      * - ICM42670::startAccel(@ref ICM42670_ACCEL_ODR_DEFAULT,
